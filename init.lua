@@ -1071,7 +1071,7 @@ cooking.register_craft({
 })
 cooking.register_craft({
 	type = "stack",
-	recipe = {"cooking_fr:donut", "cooking:strawberry_jam"},
+	recipe = {"cooking_fr:donut", "cooking_fr:strawberry_jam"},
 	output = "cooking_fr:donut_strawberry"
 })
 cooking.register_craft({
