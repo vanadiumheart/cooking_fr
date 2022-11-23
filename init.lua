@@ -672,8 +672,8 @@ season_salt_butter_garlic("cooking_fr:meat_baked", nil, 4, "Baked Meat", "mobs_m
 season_salt_butter_garlic("cooking_fr:chicken_baked", nil, 4, "Baked Chicken", "mobs_chicken_cooked.png", nil, true)
 
 season_salt_butter_garlic("cooking_fr:fish_sandwich", nil, 7, "Fish Sandwich", "cooking_fish_sandwich.png", nil, true)
-season_salt_butter_garlic("cooking_fr:meat_baked", nil, 7, "Meat Sandwich", "cooking_meat_sandwich.png", nil, true)
-season_salt_butter_garlic("cooking_fr:chicken_baked", nil, 7, "Chicken Sandwich", "cooking_chicken_sandwich.png", nil, true)
+season_salt_butter_garlic("cooking_fr:meat_sandwich", nil, 7, "Meat Sandwich", "cooking_meat_sandwich.png", nil, true)
+season_salt_butter_garlic("cooking_fr:chicken_sandwich", nil, 7, "Chicken Sandwich", "cooking_chicken_sandwich.png", nil, true)
 
 for i, itemname in pairs({"cooking_fr:fish", "cooking_fr:meat", "cooking_fr:chicken"}) do
 	for i = 1, 3 do
@@ -1046,7 +1046,7 @@ foodspoil_register("cooking_fr:donut_sugared", fs_f)
 
 cooking.register_craft({
 	type = "mix",
-	recipe = {"farming:flour", "cooking_fr:sugar", "mobs:egg", "mobs:bucket_milk", "cooking_fr:butter"},
+	recipe = {"farming:flour", "cooking:sugar", "mobs:egg", "mobs:bucket_milk", "cooking_fr:butter"},
 	output = "cooking_fr:donut_batter"
 })
 cooking.register_craft({
@@ -1061,7 +1061,7 @@ cooking.register_craft({
 })
 cooking.register_craft({
 	type = "mix",
-	recipe = {"farming:cocoa_beans", "farming:cocoa_beans", "cooking_fr:sugar", "mobs:bucket_milk"},
+	recipe = {"farming:cocoa_beans", "farming:cocoa_beans", "cooking:sugar", "mobs:bucket_milk"},
 	output = {"cooking_fr:chocolate", "bucket:bucket_empty"}
 })
 cooking.register_craft({
@@ -1081,7 +1081,7 @@ cooking.register_craft({
 })
 cooking.register_craft({
 	type = "stack",
-	recipe = {"cooking_fr:donut", "cooking_fr:sugar"},
+	recipe = {"cooking_fr:donut", "cooking:sugar"},
 	output = "cooking_fr:donut_sugared"
 })
 
@@ -1534,6 +1534,15 @@ cooking.register_craft({
 	type = "cut",
 	recipe = {"cooking_fr:pepperoni"},
 	output = {"cooking_fr:pepperoni_sliced 4"}
+})
+minetest.register_craftitem("cooking_fr:mushroom_chopped", {
+    description = "Chopped Mushroom",
+    inventory_image = "cooking_mushroom_chopped.png",
+})
+cooking.register_craft({
+	type = "cut",
+	recipe = {"flowers:mushroom_brown"},
+	output = {"cooking_fr:mushroom_chopped"}
 })
 for pizzaname, pizzadef in pairs({
 	cheese = {name = "Cheese Pizza", recipe = {"cooking:pie_crust", "cooking_fr:tomato_sauce", "cooking_fr:cheese_shredded", "cooking_fr:cheese_shredded"}},
