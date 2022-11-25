@@ -483,7 +483,7 @@ cooking.register_craft({
 	recipe = "cooking_fr:rice_uncooked",
 	output = "cooking_fr:rice"
 })
-season_salt_butter_garlic("cooking_fr:rice", nil, 6, "Rice", "cooking_rice.png", "cooking:bowl")
+season_salt_butter_garlic("cooking_fr:rice", nil, 6, "Rice", "cooking_rice.png", "cooking:bowl", nil, fs_m)
 
 --applesauce
 minetest.register_craftitem("cooking_fr:apple_stewed_uncooked", {
@@ -541,7 +541,7 @@ cooking.register_craft({
 	recipe = "farming:potato",
 	output = "cooking_fr:potato_baked"
 })
-season_salt_butter_garlic("cooking_fr:potato_baked", nil, 4, "Baked Potato", "farming_baked_potato.png")
+season_salt_butter_garlic("cooking_fr:potato_baked", nil, 4, "Baked Potato", "farming_baked_potato.png", nil, nil, fs_m)
 
 minetest.register_craftitem("cooking_fr:potato_chopped", {
 	description = "Chopped Potato",
@@ -607,7 +607,7 @@ cooking.register_craft({
 	recipe = "cooking_fr:potato_boiled",
 	output = {"cooking_fr:potato_mashed"}
 })
-season_salt_butter_garlic("cooking_fr:potato_mashed", nil, 6, "Mashed Potato", "cooking_potato_mashed.png", "cooking:bowl")
+season_salt_butter_garlic("cooking_fr:potato_mashed", nil, 6, "Mashed Potato", "cooking_potato_mashed.png", "cooking:bowl", nil, fs_m)
 
 cooking.register_craft({
 	type = "mix",
@@ -663,17 +663,17 @@ cooking.register_craft({
 	output = "cooking_fr:chicken_baked"
 })
 
-season_salt_butter_garlic("fishing:fish_raw", "cooking_fr:fish_raw", -2, "Raw Fish", "fishing_fish_raw.png", nil)
-season_salt_butter_garlic("mobs:meat_raw", "cooking_fr:meat_raw", -2, "Raw Meat", "mobs_meat_raw.png", nil)
-season_salt_butter_garlic("mobs:chicken_raw", "cooking_fr:chicken_raw", -2, "Raw Chicken", "mobs_chicken_raw.png", nil)
+season_salt_butter_garlic("fishing:fish_raw", "cooking_fr:fish_raw", -2, "Raw Fish", "fishing_fish_raw.png", nil, nil, fs_m)
+season_salt_butter_garlic("mobs:meat_raw", "cooking_fr:meat_raw", -2, "Raw Meat", "mobs_meat_raw.png", nil, nil, fs_m)
+season_salt_butter_garlic("mobs:chicken_raw", "cooking_fr:chicken_raw", -2, "Raw Chicken", "mobs_chicken_raw.png", nil, nil, fs_m)
 
-season_salt_butter_garlic("cooking_fr:fish_baked", nil, 4, "Baked Fish", "fishing_fish_cooked.png", nil, true)
-season_salt_butter_garlic("cooking_fr:meat_baked", nil, 4, "Baked Meat", "mobs_meat.png", nil, true)
-season_salt_butter_garlic("cooking_fr:chicken_baked", nil, 4, "Baked Chicken", "mobs_chicken_cooked.png", nil, true)
+season_salt_butter_garlic("cooking_fr:fish_baked", nil, 4, "Baked Fish", "fishing_fish_cooked.png", nil, true, fs_m)
+season_salt_butter_garlic("cooking_fr:meat_baked", nil, 4, "Baked Meat", "mobs_meat.png", nil, true, fs_m)
+season_salt_butter_garlic("cooking_fr:chicken_baked", nil, 4, "Baked Chicken", "mobs_chicken_cooked.png", nil, true, fs_m)
 
-season_salt_butter_garlic("cooking_fr:fish_sandwich", nil, 7, "Fish Sandwich", "cooking_fish_sandwich.png", nil, true)
-season_salt_butter_garlic("cooking_fr:meat_sandwich", nil, 7, "Meat Sandwich", "cooking_meat_sandwich.png", nil, true)
-season_salt_butter_garlic("cooking_fr:chicken_sandwich", nil, 7, "Chicken Sandwich", "cooking_chicken_sandwich.png", nil, true)
+season_salt_butter_garlic("cooking_fr:fish_sandwich", nil, 7, "Fish Sandwich", "cooking_fish_sandwich.png", nil, true, fs_m)
+season_salt_butter_garlic("cooking_fr:meat_sandwich", nil, 7, "Meat Sandwich", "cooking_meat_sandwich.png", nil, true, fs_m)
+season_salt_butter_garlic("cooking_fr:chicken_sandwich", nil, 7, "Chicken Sandwich", "cooking_chicken_sandwich.png", nil, true, fs_m)
 
 for i, itemname in pairs({"cooking_fr:fish", "cooking_fr:meat", "cooking_fr:chicken"}) do
 	for i = 1, 3 do
