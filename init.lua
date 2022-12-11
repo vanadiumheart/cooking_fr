@@ -1296,7 +1296,7 @@ cooking.register_craft({
 })
 cooking.register_craft({
 	type = "mix",
-	recipe = {"cooking_fr:breadcrumbs", "cooking_fr:ground_beef_uncooked", "farming:peppercorn", "cooking:fr:onion_sliced"},
+	recipe = {"cooking_fr:breadcrumbs", "cooking_fr:ground_beef_uncooked", "farming:peppercorn", "cooking_fr:onion_sliced"},
 	output = "cooking_fr:meatballs_uncooked"
 })
 cooking.register_craft({
