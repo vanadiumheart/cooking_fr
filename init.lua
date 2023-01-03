@@ -1000,6 +1000,7 @@ foodspoil_register("cooking_fr:donut_blueberry", fs_f)
 minetest.register_craftitem("cooking_fr:chocolate", {
     description = "Chocolate",
     inventory_image = "farming_chocolate_dark.png",
+	on_use = minetest.item_eat(2)
 })
 foodspoil_register("cooking_fr:chocolate", fs_s)
 
@@ -1074,7 +1075,7 @@ cooking.register_craft({
 cooking.register_craft({
 	type = "mix",
 	recipe = {"farming:cocoa_beans", "farming:cocoa_beans", "cooking:sugar", "mobs:bucket_milk"},
-	output = {"cooking_fr:chocolate", "bucket:bucket_empty"}
+	output = {"cooking_fr:chocolate 4", "bucket:bucket_empty"}
 })
 cooking.register_craft({
 	type = "stack",
