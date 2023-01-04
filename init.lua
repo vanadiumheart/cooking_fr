@@ -1060,7 +1060,7 @@ foodspoil_register("cooking_fr:donut_sugared", fs_f)
 cooking.register_craft({
 	type = "mix",
 	recipe = {"farming:flour", "cooking:sugar", "mobs:egg", "mobs:bucket_milk", "cooking_fr:butter"},
-	output = "cooking_fr:donut_batter"
+	output = {"cooking_fr:donut_batter", "bucket:bucket_empty"}
 })
 cooking.register_craft({
 	type = "oven",
