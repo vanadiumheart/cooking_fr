@@ -1701,4 +1701,9 @@ cooking.register_craft({
     output = {"cooking_fr:popcorn_salted"},
 })
 
+if minetest.get_modpath("cake") then
+	minetest.clear_craft({output = "cake:cake_uncooked"})
+	--todo make cake work with cooking and foodspoil
+end
+
 dofile(minetest.get_modpath("cooking_fr").."/farming_clear_crafts.lua")
