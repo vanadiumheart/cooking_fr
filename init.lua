@@ -298,7 +298,7 @@ cooking.register_craft({
 })
 cooking.register_craft({
 	type = "stack",
-	recipe = {"cooking_fr:porridge_sweetened", "cooking:sugar"},
+	recipe = {"cooking_fr:porridge", "cooking:sugar"},
 	output = "cooking_fr:porridge_sweetened",
 })
 
