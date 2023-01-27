@@ -1233,6 +1233,7 @@ minetest.register_craftitem("cooking_fr:alfredo_sauce", {
     description = "Alfredo Sauce",
     inventory_image = "cooking_alfredo_sauce.png",
 	param2 = 215,
+	on_use = minetest.item_eat(6, "cooking:bowl")
 })
 foodspoil_register("cooking_fr:alfredo_sauce", fs_m)
 
