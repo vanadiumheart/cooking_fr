@@ -1256,7 +1256,7 @@ cooking.register_craft({
 cooking.register_craft({
 	type = "soup",
 	recipe = {"cooking_fr:cheese", "cooking_fr:butter", "farming:salt", "mobs:bucket_milk"},
-	output = {"cooking_fr:alfredo_sauce_uncooked", "bucket:bucket_empty"}--todo make milk based soups, or allow soups to have more than one output
+	output = {"cooking_fr:alfredo_sauce_uncooked", "bucket:bucket_empty"}--todo make milk based soups
 })
 cooking.register_craft({
 	type = "stove",
