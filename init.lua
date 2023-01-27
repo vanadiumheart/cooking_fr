@@ -1212,6 +1212,7 @@ minetest.register_craftitem("cooking_fr:tomato_soup", {
     description = "Tomato Soup",
     inventory_image = "cooking_tomato_soup.png",
 	param2 = 9,
+	on_use = minetest.item_eat(6, "cooking:bowl")
 })
 foodspoil_register("cooking_fr:tomato_soup", fs_m)
 
