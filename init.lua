@@ -929,12 +929,7 @@ minetest.register_craftitem("cooking_fr:pumpkin_pie", {
 	on_use = minetest.item_eat(10)
 })
 foodspoil_register("cooking_fr:pumpkin_pie", fs_m)
-
-minetest.register_craftitem("cooking_fr:pumpkin_slice", {
-    description = "Pumpkin Slice",
-    inventory_image = "farming_pumpkin_slice.png",
-})
-foodspoil_register("cooking_fr:pumpkin_slice", fs_m)
+foodspoil_register("farming:pumpkin_slice", 60)
 
 cooking.register_craft({
 	type = "stack",
@@ -959,13 +954,8 @@ cooking.register_craft({
 	output = "cooking_fr:strawberry_pie"
 })
 cooking.register_craft({
-	type = "cut",
-	recipe = "farming:pumpkin_8",
-	output = "cooking_fr:pumpkin_slice"
-})
-cooking.register_craft({
 	type = "stack",
-	recipe = {"cooking:pie_crust", "cooking_fr:pumpkin_slice", "cooking_fr:pumpkin_slice", "cooking:sugar", "cooking:pie_crust"},
+	recipe = {"cooking:pie_crust", "farming:pumpkin_slice", "farming:pumpkin_slice", "cooking:sugar", "cooking:pie_crust"},
 	output = "cooking_fr:pumpkin_pie_uncooked"
 })
 cooking.register_craft({
