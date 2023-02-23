@@ -42,7 +42,6 @@ for i, itemname in pairs ({
 	"farming:potato_salad",
 	"farming:pumpkin_bread",
 	"farming:pumpkin_dough",
-	"farming:pumpkin_slice",
 	"farming:rhubarb_pie",
 	"farming:rice_bread",
 	"farming:rice_flour",
