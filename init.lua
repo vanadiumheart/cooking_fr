@@ -3,7 +3,7 @@ if not farming or farming.mod ~= "redo" then return end
 local fs_f = 2
 local fs_m = 7
 local fs_s = 14
-local fs_reg = function()
+local fs_reg = function() end
 
 if foodspoil then
 	fs_reg = foodspoil_register
