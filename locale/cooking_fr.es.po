@@ -1,0 +1,522 @@
+# Spanish translations for PACKAGE package.
+# Copyright (C) 2026 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-01 20:39-0500\n"
+"PO-Revision-Date: 2026-06-01 20:39-0500\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ASCII\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: init.lua:28 init.lua:213
+msgid "Salted"
+msgstr "Salado"
+
+#: init.lua:34 init.lua:220
+msgid "Buttered"
+msgstr "Con mantequilla"
+
+#: init.lua:40
+msgid "Garlic"
+msgstr "Ajo"
+
+#: init.lua:72
+msgid "Colander"
+msgstr "Colador"
+
+#: init.lua:86
+msgid "Sliced Pepper"
+msgstr "Pimiento en rodajas"
+
+#: init.lua:92
+msgid "Chopped Garlic"
+msgstr "Ajo picado"
+
+#: init.lua:98
+msgid "Sliced Onion"
+msgstr "Cebolla en rodajas"
+
+#: init.lua:104
+msgid "Sliced Tomato"
+msgstr "Tomate en rodajas"
+
+#: init.lua:138
+msgid "Cheese"
+msgstr "Queso"
+
+#: init.lua:144
+msgid "Sliced Cheese"
+msgstr "Queso en rodajas"
+
+#: init.lua:168
+msgid "Garlic Powder"
+msgstr "Polvo de ajo"
+
+#: init.lua:204
+msgid "Boiled"
+msgstr "Hervido"
+
+#: init.lua:253
+msgid "Beef Stroganoff"
+msgstr "Estofado Stroganoff"
+
+#: init.lua:266
+msgid "Uncooked Porridge"
+msgstr "Gachas sin cocinar"
+
+#: init.lua:276
+msgid "Porridge"
+msgstr "Gachas"
+
+#: init.lua:285
+msgid "Sweetened Porridge"
+msgstr "Gachas endulzadas"
+
+#: init.lua:317
+msgid "Uncooked Ground Beef"
+msgstr "Carne molida sin cocinar"
+
+#: init.lua:323
+msgid "Ground Beef"
+msgstr "Carne molida"
+
+#: init.lua:329
+msgid "Uncooked Hamburger Patty"
+msgstr "Hamburguesa sin cocinar"
+
+#: init.lua:335
+msgid "Hamburger"
+msgstr "Hamburguesa"
+
+#: init.lua:342
+msgid "Cheeseburger"
+msgstr "Hamburguesa con queso"
+
+#: init.lua:349
+msgid "Double Cheeseburger"
+msgstr "Doble hamburguesa con queso"
+
+#: init.lua:356
+msgid "Supreme Cheeseburger"
+msgstr "Hamburguesa suprema"
+
+#: init.lua:363
+msgid "Supreme Cheeseburger (no onion)"
+msgstr "Hamburguesa suprema (sin cebolla)"
+
+#: init.lua:370
+msgid "Supreme Cheeseburger (no tomato)"
+msgstr "Hamburguesa suprema (sin tomate)"
+
+#: init.lua:377
+msgid "Heartstopper Burger"
+msgstr "Hamburguesa Heartstopper"
+
+#: init.lua:384
+msgid "Hamburger Patty"
+msgstr "Filete de hamburguesa"
+
+#: init.lua:390
+msgid "Bun Top"
+msgstr "Parte superior del pan"
+
+#: init.lua:396
+msgid "Bun Bottom"
+msgstr "Parte inferior del pan"
+
+#: init.lua:471
+msgid "Uncooked Rice"
+msgstr "Arroz sin cocinar"
+
+#: init.lua:479
+msgid "Rice"
+msgstr "Arroz"
+
+#: init.lua:503
+msgid "Uncooked Stewed Apples"
+msgstr "Manzanas guisadas sin cocinar"
+
+#: init.lua:513
+msgid "Stewed Apples"
+msgstr "Manzanas guisadas"
+
+#: init.lua:521
+msgid "Applesauce"
+msgstr "Compota de manzana"
+
+#: init.lua:546
+msgid "Baked Potato"
+msgstr "Papa al horno"
+
+#: init.lua:561 init.lua:572
+msgid "Chopped Potato"
+msgstr "Papa picada"
+
+#: init.lua:582
+msgid "Uncooked Oven Fries"
+msgstr "Papas fritas al horno sin cocinar"
+
+#: init.lua:588
+msgid "Oven Fries"
+msgstr "Papas fritas al horno"
+
+#: init.lua:601
+msgid "Boiled Potato"
+msgstr "Papa hervida"
+
+#: init.lua:614
+msgid "Mashed Potato"
+msgstr "Puré de papas"
+
+#: init.lua:642 init.lua:685
+msgid "Baked Fish"
+msgstr "Pescado al horno"
+
+#: init.lua:649 init.lua:686
+msgid "Baked Meat"
+msgstr "Carne al horno"
+
+#: init.lua:656 init.lua:687
+msgid "Baked Chicken"
+msgstr "Pollo al horno"
+
+#: init.lua:681
+msgid "Raw Fish"
+msgstr "Pescado crudo"
+
+#: init.lua:682
+msgid "Raw Meat"
+msgstr "Carne cruda"
+
+#: init.lua:683
+msgid "Raw Chicken"
+msgstr "Pollo crudo"
+
+#: init.lua:689
+msgid "Fish Sandwich"
+msgstr "Sándwich de pescado"
+
+#: init.lua:690
+msgid "Meat Sandwich"
+msgstr "Sándwich de carne"
+
+#: init.lua:691
+msgid "Chicken Sandwich"
+msgstr "Sándwich de pollo"
+
+#: init.lua:712
+msgid "Fried Egg"
+msgstr "Huevo frito"
+
+#: init.lua:719
+msgid "Salted Fried Egg"
+msgstr "Huevo frito salado"
+
+#: init.lua:726
+msgid "Uncooked Scrambled Egg"
+msgstr "Huevo revuelto sin cocinar"
+
+#: init.lua:732
+msgid "Scrambled Egg"
+msgstr "Huevo revuelto"
+
+#: init.lua:739
+msgid "Uncooked Scrambled Egg Aromatics"
+msgstr "Huevo revuelto con aromáticos sin cocinar"
+
+#: init.lua:745
+msgid "Scrambled Egg Aromatics"
+msgstr "Huevo revuelto con aromáticos"
+
+#: init.lua:751
+msgid "Uncooked Tasty Scrambled Egg"
+msgstr "Huevo revuelto sabroso sin cocinar"
+
+#: init.lua:757
+msgid "Tasty Scrambled Egg"
+msgstr "Huevo revuelto sabroso"
+
+#: init.lua:811
+msgid "Uncooked Garlic Bread"
+msgstr "Pan de ajo sin cocinar"
+
+#: init.lua:818
+msgid "Garlic Bread"
+msgstr "Pan de ajo"
+
+#: init.lua:839
+msgid "Coffee Cup"
+msgstr "Taza de café"
+
+#: init.lua:845
+msgid "Ground Coffee Beans"
+msgstr "Granos de café molidos"
+
+#: init.lua:851
+msgid "Cup of Uncooked Coffee"
+msgstr "Taza de café sin preparar"
+
+#: init.lua:860
+msgid "Cup of Coffee"
+msgstr "Taza de café"
+
+#: init.lua:869
+msgid "Coffee Filter"
+msgstr "Filtro de café"
+
+#: init.lua:900
+msgid "Uncooked Rhubarb Pie"
+msgstr "Pastel de ruibarbo sin cocinar"
+
+#: init.lua:906
+msgid "Rhubarb Pie"
+msgstr "Pastel de ruibarbo"
+
+#: init.lua:913
+msgid "Uncooked Strawberry Pie"
+msgstr "Pastel de fresa sin cocinar"
+
+#: init.lua:919
+msgid "Strawberry Pie"
+msgstr "Pastel de fresa"
+
+#: init.lua:926
+msgid "Uncooked Pumpkin Pie"
+msgstr "Pastel de calabaza sin cocinar"
+
+#: init.lua:932
+msgid "Pumpkin Pie"
+msgstr "Pastel de calabaza"
+
+#: init.lua:976
+msgid "Donut Batter"
+msgstr "Masa de dona"
+
+#: init.lua:982
+msgid "Donut"
+msgstr "Dona"
+
+#: init.lua:989
+msgid "Blueberry Donut"
+msgstr "Dona de arándanos"
+
+#: init.lua:996
+msgid "Chocolate"
+msgstr "Chocolate"
+
+#: init.lua:1002
+msgid "Chocolate Donut"
+msgstr "Dona de chocolate"
+
+#: init.lua:1009
+msgid "Strawberry Donut"
+msgstr "Dona de fresa"
+
+#: init.lua:1016
+msgid "Strawberry Jam"
+msgstr "Mermelada de fresa"
+
+#: init.lua:1022
+msgid "Bread with Strawberry Jam"
+msgstr "Pan con mermelada de fresa"
+
+#: init.lua:1029
+msgid "Toast with Strawberry Jam"
+msgstr "Tostada con mermelada de fresa"
+
+#: init.lua:1046
+msgid "Sugared Donut"
+msgstr "Dona azucarada"
+
+#: init.lua:1095
+msgid "Uncooked Chopped Meat"
+msgstr "Carne picada sin cocinar"
+
+#: init.lua:1101
+msgid "Uncooked Stir Fry"
+msgstr "Salteado sin cocinar"
+
+#: init.lua:1107
+msgid "Stir Fry"
+msgstr "Salteado"
+
+#: init.lua:1133
+msgid "Pasta Dough"
+msgstr "Masa de pasta"
+
+#: init.lua:1140 init.lua:1146
+msgid "Uncooked Noodles"
+msgstr "Fideos sin cocinar"
+
+#: init.lua:1156
+msgid "Noodles"
+msgstr "Fideos"
+
+#: init.lua:1164
+msgid "Uncooked Lasagna Noodle"
+msgstr "Lámina de lasaña sin cocinar"
+
+#: init.lua:1204
+msgid "Tomato Soup"
+msgstr "Sopa de tomate"
+
+#: init.lua:1212
+msgid "Tomato Sauce"
+msgstr "Salsa de tomate"
+
+#: init.lua:1219
+msgid "Uncooked Alfredo Sauce"
+msgstr "Salsa Alfredo sin cocinar"
+
+#: init.lua:1226
+msgid "Alfredo Sauce"
+msgstr "Salsa Alfredo"
+
+#: init.lua:1263
+msgid "Breadcrumbs"
+msgstr "Pan rallado"
+
+#: init.lua:1269
+msgid "Uncooked Meatballs"
+msgstr "Albóndigas sin cocinar"
+
+#: init.lua:1275
+msgid "Meatballs"
+msgstr "Albóndigas"
+
+#: init.lua:1281
+msgid "Spaghetti"
+msgstr "Espagueti"
+
+#: init.lua:1310
+msgid "Uncooked Lasagna"
+msgstr "Lasaña sin cocinar"
+
+#: init.lua:1316
+msgid "Lasagna"
+msgstr "Lasaña"
+
+#: init.lua:1334
+msgid "Chicken Alfredo"
+msgstr "Pollo Alfredo"
+
+#: init.lua:1341
+msgid "Uncooked Chopped Chicken"
+msgstr "Pollo picado sin cocinar"
+
+#: init.lua:1347
+msgid "Chopped Chicken"
+msgstr "Pollo picado"
+
+#: init.lua:1372
+msgid "Uncooked Chicken Noodle Soup"
+msgstr "Sopa de fideos con pollo sin cocinar"
+
+#: init.lua:1380
+msgid "Chicken Noodle Soup"
+msgstr "Sopa de fideos con pollo"
+
+#: init.lua:1388
+msgid "Chopped Carrot"
+msgstr "Zanahoria picada"
+
+#: init.lua:1410
+msgid "Uncooked Beef Potato Stew"
+msgstr "Estofado de carne y papas sin cocinar"
+
+#: init.lua:1418
+msgid "Beef Potato Stew"
+msgstr "Estofado de carne y papas"
+
+#: init.lua:1437
+msgid "Uncooked Cheesy Fish Soup"
+msgstr "Sopa de pescado con queso sin cocinar"
+
+#: init.lua:1445
+msgid "Cheesy Fish Soup"
+msgstr "Sopa de pescado con queso"
+
+#: init.lua:1466
+msgid "Shredded Cheese"
+msgstr "Queso rallado"
+
+#: init.lua:1472
+msgid "Tortilla"
+msgstr "Tortilla"
+
+#: init.lua:1478
+msgid "Beef Burrito"
+msgstr "Burrito de carne"
+
+#: init.lua:1485
+msgid "Chicken Burrito"
+msgstr "Burrito de pollo"
+
+#: init.lua:1492
+msgid "Chopped Meat"
+msgstr "Carne picada"
+
+#: init.lua:1527
+msgid "Pepperoni"
+msgstr "Pepperoni"
+
+#: init.lua:1533
+msgid "Sliced Pepperoni"
+msgstr "Pepperoni en rodajas"
+
+#: init.lua:1549
+msgid "Chopped Mushroom"
+msgstr "Champiñones picados"
+
+#: init.lua:1558
+msgid "Cheese Pizza"
+msgstr "Pizza de queso"
+
+#: init.lua:1559
+msgid "Hamburger Pizza"
+msgstr "Pizza de hamburguesa"
+
+#: init.lua:1560
+msgid "Chicken Pizza"
+msgstr "Pizza de pollo"
+
+#: init.lua:1561
+msgid "Mushroom Pizza"
+msgstr "Pizza de champiñones"
+
+#: init.lua:1562
+msgid "Pepperoni Pizza"
+msgstr "Pizza de pepperoni"
+
+#: init.lua:1563
+msgid "Supreme Pizza"
+msgstr "Pizza suprema"
+
+#: init.lua:1618
+msgid "Uncooked"
+msgstr "Sin cocinar"
+
+#: init.lua:1645
+msgid "Corn Kernels"
+msgstr "Granos de maíz"
+
+#: init.lua:1651
+msgid "Unflavored Popcorn"
+msgstr "Palomitas sin sabor"
+
+#: init.lua:1658
+msgid "Salted Popcorn"
+msgstr "Palomitas saladas"
+
+#: init.lua:1665
+msgid "Sugared Popcorn"
+msgstr "Palomitas azucaradas"

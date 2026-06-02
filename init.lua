@@ -1,5 +1,7 @@
 if not farming or farming.mod ~= "redo" then return end
 
+local S = core.get_translator("cooking_fr")
+
 local fs_f = 2
 local fs_m = 7
 local fs_s = 14
@@ -22,22 +24,22 @@ local function season_salt_butter_garlic(itemname, newitemname, satpoints, descr
 		s2 = satpoints
 		s3 = satpoints
 	end
-	minetest.register_craftitem(newitemname.."_1", {
-		description = "Salted "..description,
+	core.register_craftitem(newitemname.."_1", {
+		description = S("Salted").." "..description,
 		inventory_image = inventory_image,
-		on_use = minetest.item_eat(s1, replace_item),
+		on_use = core.item_eat(s1, replace_item),
 		--groups = {not_in_creative_inventory = 1}
 	})
-	minetest.register_craftitem(newitemname.."_2", {
-		description = "Buttered "..description,
+	core.register_craftitem(newitemname.."_2", {
+		description = S("Buttered").." "..description,
 		inventory_image = inventory_image.."^cooking_buttery.png",
-		on_use = minetest.item_eat(s2, replace_item),
+		on_use = core.item_eat(s2, replace_item),
 		--groups = {not_in_creative_inventory = 1}
 	})
-	minetest.register_craftitem(newitemname.."_3", {
-		description = "Garlic "..description,
+	core.register_craftitem(newitemname.."_3", {
+		description = S("Garlic").." "..description,
 		inventory_image = inventory_image.."^cooking_buttery.png^(cooking_garlicky.png^[mask:"..inventory_image..")",
-		on_use = minetest.item_eat(s3, replace_item),
+		on_use = core.item_eat(s3, replace_item),
 		groups = {not_in_creative_inventory = 1}
 	})
 	if foodspoil_time then
@@ -64,14 +66,14 @@ local function season_salt_butter_garlic(itemname, newitemname, satpoints, descr
 	end
 end
 
-minetest.override_item("farming:salt", {groups = {food_salt = 1, dig_immediate = 3,attached_node = 1}})
+core.override_item("farming:salt", {groups = {food_salt = 1, dig_immediate = 3,attached_node = 1}})
 
-minetest.register_craftitem("cooking_fr:colander", {
-	description = "Colander",
+core.register_craftitem("cooking_fr:colander", {
+	description = S("Colander"),
 	inventory_image = "cooking_colander.png",
 	_soup_swap = false
 })
-minetest.register_craft({
+core.register_craft({
 	recipe = {
 		{"xpanes:bar_flat", "", "xpanes:bar_flat"},
 		{"", "xpanes:bar_flat", ""}
@@ -80,26 +82,26 @@ minetest.register_craft({
 })
 
 --chopped/sliced items
-minetest.register_craftitem("cooking_fr:pepper_sliced", {
-	description = "Sliced Pepper",
+core.register_craftitem("cooking_fr:pepper_sliced", {
+	description = S("Sliced Pepper"),
 	inventory_image = "cooking_pepper_sliced.png",
 })
 fs_reg("cooking_fr:pepper_sliced", fs_m)
 
-minetest.register_craftitem("cooking_fr:garlic_chopped", {
-	description = "Chopped Garlic",
+core.register_craftitem("cooking_fr:garlic_chopped", {
+	description = S("Chopped Garlic"),
 	inventory_image = "cooking_garlic_chopped.png",
 })
 fs_reg("cooking_fr:garlic_chopped", fs_m)
 
-minetest.register_craftitem("cooking_fr:onion_sliced", {
-	description = "Sliced Onion",
+core.register_craftitem("cooking_fr:onion_sliced", {
+	description = S("Sliced Onion"),
 	inventory_image = "cooking_onion_sliced.png",
 })
 fs_reg("cooking_fr:onion_sliced", fs_m)
 
-minetest.register_craftitem("cooking_fr:tomato_sliced", {
-	description = "Sliced Tomato",
+core.register_craftitem("cooking_fr:tomato_sliced", {
+	description = S("Sliced Tomato"),
 	inventory_image = "cooking_tomato_sliced.png",
 })
 fs_reg("cooking_fr:tomato_sliced", fs_m)
@@ -126,20 +128,20 @@ cooking.register_craft({
 })
 
 --butter and cheese
-minetest.register_craftitem("cooking_fr:butter", {
-	description = "Butter",
+core.register_craftitem("cooking_fr:butter", {
+	description = ("Butter"),
 	inventory_image = "mobs_butter.png",
 })
 fs_reg("cooking_fr:butter", fs_s)
 
-minetest.register_craftitem("cooking_fr:cheese", {
-	description = "Cheese",
+core.register_craftitem("cooking_fr:cheese", {
+	description = S("Cheese"),
 	inventory_image = "mobs_cheese.png",
 })
 fs_reg("cooking_fr:cheese", fs_s)
 
-minetest.register_craftitem("cooking_fr:cheese_sliced", {
-	description = "Sliced Cheese",
+core.register_craftitem("cooking_fr:cheese_sliced", {
+	description = S("Sliced Cheese"),
 	inventory_image = "cooking_cheese_sliced.png",
 })
 fs_reg("cooking_fr:cheese_sliced", fs_s)
@@ -162,8 +164,8 @@ cooking.register_craft({
 })
 
 --garlic powder
-minetest.register_craftitem("cooking_fr:garlic_powder", {
-	description = "Garlic Powder",
+core.register_craftitem("cooking_fr:garlic_powder", {
+	description = S("Garlic Powder"),
 	inventory_image = "cooking_garlic_powder.png",
 })
 fs_reg("cooking_fr:garlic_powder", fs_s)
@@ -184,12 +186,12 @@ for itemname, tbl in pairs({
 	
 	local fullname = "farming:"..itemname
 	local boiledname = "cooking_fr:"..itemname.."_boiled"
-	local def = minetest.registered_items[fullname]
+	local def = core.registered_items[fullname]
 	assert(def, fullname.." has no registration")
 	local desc = def.description
 	local sat = tbl.sat or 1 	
 	local tex = "farming_"..itemname..".png^[multiply:#cacaca"
-	minetest.register_craftitem("cooking_fr:"..itemname.."_uncooked", {
+	core.register_craftitem("cooking_fr:"..itemname.."_uncooked", {
 		description = desc,
 		inventory_image = tex,
 		param2 = tbl.c1,
@@ -198,26 +200,26 @@ for itemname, tbl in pairs({
 		_cookingsimple = true
 		--groups = {not_in_creative_inventory = 1}
 	})
-	minetest.register_craftitem(boiledname, {
-		description = "Boiled "..desc,
+	core.register_craftitem(boiledname, {
+		description = S("Boiled").." "..desc,
 		inventory_image = tex,
 		param2 = tbl.c2,
 		_soup_container ="cooking_fr:colander",
-		on_use = minetest.item_eat(sat+1),
+		on_use = core.item_eat(sat+1),
 		--groups = {not_in_creative_inventory = 1}
 	})
 	fs_reg(boiledname, fs_m)
-	minetest.register_craftitem(boiledname.."_1", {
-		description = "Salted "..desc,
+	core.register_craftitem(boiledname.."_1", {
+		description = S("Salted").." "..desc,
 		inventory_image = tex,
-		on_use = minetest.item_eat(sat+2),
+		on_use = core.item_eat(sat+2),
 		--groups = {not_in_creative_inventory = 1}
 	})
 	fs_reg(boiledname.."_1", fs_m)
-	minetest.register_craftitem(boiledname.."_2", {
-		description = "Buttered "..desc,
+	core.register_craftitem(boiledname.."_2", {
+		description = S("Buttered").." "..desc,
 		inventory_image = tex.."^cooking_buttery.png",
-		on_use = minetest.item_eat(sat+3),
+		on_use = core.item_eat(sat+3),
 		groups = {not_in_creative_inventory = 1}
 	})
 	fs_reg(boiledname.."_2", fs_m)
@@ -247,10 +249,10 @@ end
 
 --beef stroganoff
 
-minetest.register_craftitem("cooking_fr:beef_stroganoff", {
-	description = "Beef Stroganoff",
+core.register_craftitem("cooking_fr:beef_stroganoff", {
+	description = S("Beef Stroganoff"),
 	inventory_image = "cooking_beef_stroganoff.png",
-	on_use = minetest.item_eat(10, "cooking:bowl")
+	on_use = core.item_eat(10, "cooking:bowl")
 })
 fs_reg("cooking_fr:beef_stroganoff", fs_f)
 cooking.register_craft({
@@ -260,31 +262,31 @@ cooking.register_craft({
 })
 
 --porridge
-minetest.register_craftitem("cooking_fr:porridge_uncooked", {
-	description = "Uncooked Porridge",
+core.register_craftitem("cooking_fr:porridge_uncooked", {
+	description = S("Uncooked Porridge"),
 	--stack_max = 1,
 	inventory_image = "farming_porridge.png",
 	param2 = 238,
-	on_use = minetest.item_eat(2, "cooking:bowl"),
+	on_use = core.item_eat(2, "cooking:bowl"),
 	_cookingsimple = true
 })
 fs_reg("cooking_fr:porridge_uncooked", fs_m)
 
-minetest.register_craftitem("cooking_fr:porridge", {
-	description = "Porridge",
+core.register_craftitem("cooking_fr:porridge", {
+	description = S("Porridge"),
 	--stack_max = 1,
 	inventory_image = "farming_porridge.png",
 	param2 = 240,
-	on_use = minetest.item_eat(6, "cooking:bowl")
+	on_use = core.item_eat(6, "cooking:bowl")
 })
 fs_reg("cooking_fr:porridge", fs_m)
 
-minetest.register_craftitem("cooking_fr:porridge_sweetened", {
-	description = "Sweetened Porridge",
+core.register_craftitem("cooking_fr:porridge_sweetened", {
+	description = S("Sweetened Porridge"),
 	--stack_max = 1,
 	inventory_image = "farming_porridge.png",
 	param2 = 240,
-	on_use = minetest.item_eat(8, "cooking:bowl"),
+	on_use = core.item_eat(8, "cooking:bowl"),
 	_cookingsimple = true
 })
 fs_reg("cooking_fr:porridge_sweetened", fs_m)
@@ -311,87 +313,87 @@ cooking.register_craft({
 
 --hamburgers
 
-minetest.register_craftitem("cooking_fr:ground_beef_uncooked", {
-	description = "Uncooked Ground Beef",
+core.register_craftitem("cooking_fr:ground_beef_uncooked", {
+	description = S("Uncooked Ground Beef"),
 	inventory_image = "cooking_ground_beef_uncooked.png",
 })
 fs_reg("cooking_fr:ground_beef_uncooked", fs_m)
 
-minetest.register_craftitem("cooking_fr:ground_beef", {
-	description = "Ground Beef",
+core.register_craftitem("cooking_fr:ground_beef", {
+	description = S("Ground Beef"),
 	inventory_image = "cooking_ground_beef.png",
 })
 fs_reg("cooking_fr:ground_beef", fs_m)
 
-minetest.register_craftitem("cooking_fr:hamburger_patty_uncooked", {
-	description = "Uncooked Hamburger Patty",
+core.register_craftitem("cooking_fr:hamburger_patty_uncooked", {
+	description = S("Uncooked Hamburger Patty"),
 	inventory_image = "cooking_hamburger_patty_uncooked.png",
 })
 fs_reg("cooking_fr:hamburger_patty_uncooked", fs_m)
 
-minetest.register_craftitem("cooking_fr:hamburger", {
-	description = "Hamburger",
+core.register_craftitem("cooking_fr:hamburger", {
+	description = S("Hamburger"),
 	inventory_image = "cooking_hamburger.png",
-	on_use = minetest.item_eat(6)
+	on_use = core.item_eat(6)
 })
 fs_reg("cooking_fr:hamburger", fs_f)
 
-minetest.register_craftitem("cooking_fr:cheeseburger", {
-	description = "Cheeseburger",
+core.register_craftitem("cooking_fr:cheeseburger", {
+	description = S("Cheeseburger"),
 	inventory_image = "cooking_cheeseburger.png",
-	on_use = minetest.item_eat(8)
+	on_use = core.item_eat(8)
 })
 fs_reg("cooking_fr:cheeseburger", fs_f)
 
-minetest.register_craftitem("cooking_fr:cheeseburger_double", {
-	description = "Double Cheeseburger",
+core.register_craftitem("cooking_fr:cheeseburger_double", {
+	description = S("Double Cheeseburger"),
 	inventory_image = "cooking_cheeseburger_double.png",
-	on_use = minetest.item_eat(12)
+	on_use = core.item_eat(12)
 })
 fs_reg("cooking_fr:cheeseburger_double", fs_f)
 
-minetest.register_craftitem("cooking_fr:cheeseburger_supreme", {
-	description = "Supreme Cheeseburger",
+core.register_craftitem("cooking_fr:cheeseburger_supreme", {
+	description = S("Supreme Cheeseburger"),
 	inventory_image = "cooking_cheeseburger_supreme.png",
-	on_use = minetest.item_eat(16)
+	on_use = core.item_eat(16)
 })
 fs_reg("cooking_fr:cheeseburger_supreme", fs_f)
 
-minetest.register_craftitem("cooking_fr:cheeseburger_supreme_no_onion", {
-	description = "Supreme Cheeseburger (no onion)",
+core.register_craftitem("cooking_fr:cheeseburger_supreme_no_onion", {
+	description = S("Supreme Cheeseburger (no onion)"),
 	inventory_image = "cooking_cheeseburger_supreme_no_onion.png",
-	on_use = minetest.item_eat(14)
+	on_use = core.item_eat(14)
 })
 fs_reg("cooking_fr:cheeseburger_supreme_no_onion", fs_f)
 
-minetest.register_craftitem("cooking_fr:cheeseburger_supreme_no_tomato", {
-	description = "Supreme Cheeseburger (no tomato)",
+core.register_craftitem("cooking_fr:cheeseburger_supreme_no_tomato", {
+	description = S("Supreme Cheeseburger (no tomato)"),
 	inventory_image = "cooking_cheeseburger_supreme_no_tomato.png",
-	on_use = minetest.item_eat(14)
+	on_use = core.item_eat(14)
 })
 fs_reg("cooking_fr:cheeseburger_supreme_no_tomato", fs_f)
 
-minetest.register_craftitem("cooking_fr:heartstopper", {
-	description = "Heartstopper Burger",
+core.register_craftitem("cooking_fr:heartstopper", {
+	description = S("Heartstopper Burger"),
 	inventory_image = "cooking_heartstopper.png",
-	on_use = minetest.item_eat(24)
+	on_use = core.item_eat(24)
 })
 fs_reg("cooking_fr:heartstopper", fs_f)
 
-minetest.register_craftitem("cooking_fr:hamburger_patty", {
-	description = "Hamburger Patty",
+core.register_craftitem("cooking_fr:hamburger_patty", {
+	description = S("Hamburger Patty"),
 	inventory_image = "cooking_hamburger_patty.png",
 })
 fs_reg("cooking_fr:hamburger_patty", fs_m)
 
-minetest.register_craftitem("cooking_fr:bun_top", {
-	description = "Bun Top",
+core.register_craftitem("cooking_fr:bun_top", {
+	description = S("Bun Top"),
 	inventory_image = "cooking_bun_top.png",
 })
 fs_reg("cooking_fr:bun_top", fs_m)
 
-minetest.register_craftitem("cooking_fr:bun_bottom", {
-	description = "Bun Bottom",
+core.register_craftitem("cooking_fr:bun_bottom", {
+	description = S("Bun Bottom"),
 	inventory_image = "cooking_bun_bottom.png",
 })
 fs_reg("cooking_fr:bun_bottom", fs_m)
@@ -465,20 +467,20 @@ cooking.register_craft({
 })
 
 --rice
-minetest.register_craftitem("cooking_fr:rice_uncooked", {
-	description = "Uncooked Rice",
+core.register_craftitem("cooking_fr:rice_uncooked", {
+	description = S("Uncooked Rice"),
 	--stack_max = 1,
 	inventory_image = "cooking_rice_uncooked.png",
 	param2 = 94,
 })
 fs_reg("cooking_fr:rice_uncooked", fs_s)
 
-minetest.register_craftitem("cooking_fr:rice", {
-	description = "Rice",
+core.register_craftitem("cooking_fr:rice", {
+	description = S("Rice"),
 	--stack_max = 1,
 	inventory_image = "cooking_rice.png",
 	param2 = 204,
-	on_use = minetest.item_eat(6, "cooking:bowl")
+	on_use = core.item_eat(6, "cooking:bowl")
 })
 fs_reg("cooking_fr:rice", fs_m)
 
@@ -497,8 +499,8 @@ cooking.register_craft({
 season_salt_butter_garlic("cooking_fr:rice", nil, 6, "Rice", "cooking_rice.png", "cooking:bowl")
 
 --applesauce
-minetest.register_craftitem("cooking_fr:apple_stewed_uncooked", {
-	description = "Uncooked Stewed Apples",
+core.register_craftitem("cooking_fr:apple_stewed_uncooked", {
+	description = S("Uncooked Stewed Apples"),
 	inventory_image = "cooking_apple_stewed.png",
 	_soup_container = "cooking_fr:colander",
 	_soup_item = "cooking:chopped_apple",
@@ -507,18 +509,18 @@ minetest.register_craftitem("cooking_fr:apple_stewed_uncooked", {
 })
 fs_reg("cooking_fr:apple_stewed_uncooked", fs_m)
 
-minetest.register_craftitem("cooking_fr:apple_stewed", {
-	description = "Stewed Apples",
+core.register_craftitem("cooking_fr:apple_stewed", {
+	description = S("Stewed Apples"),
 	inventory_image = "cooking_apple_stewed.png",
 	param2 = 4,
-	on_use = minetest.item_eat(2, "cooking:bowl")
+	on_use = core.item_eat(2, "cooking:bowl")
 })
 fs_reg("cooking_fr:apple_stewed", fs_m)
 
-minetest.register_craftitem("cooking_fr:applesauce", {
-	description = "Applesauce",
+core.register_craftitem("cooking_fr:applesauce", {
+	description = S("Applesauce"),
 	inventory_image = "cooking_applesauce.png",
-	on_use = minetest.item_eat(3, "cooking:bowl")
+	on_use = core.item_eat(3, "cooking:bowl")
 })
 fs_reg("cooking_fr:applesauce", fs_s)
 
@@ -540,10 +542,10 @@ cooking.register_craft({
 	output = {"cooking_fr:applesauce"}
 })
 --potatoes
-minetest.register_craftitem("cooking_fr:potato_baked", {
-	description = "Baked Potato",
+core.register_craftitem("cooking_fr:potato_baked", {
+	description = S("Baked Potato"),
 	inventory_image = "farming_baked_potato.png",
-	on_use = minetest.item_eat(4)
+	on_use = core.item_eat(4)
 })
 fs_reg("cooking_fr:potato_baked", fs_m)
 
@@ -555,8 +557,8 @@ cooking.register_craft({
 })
 season_salt_butter_garlic("cooking_fr:potato_baked", nil, 4, "Baked Potato", "farming_baked_potato.png", nil, nil, fs_m)
 
-minetest.register_craftitem("cooking_fr:potato_chopped", {
-	description = "Chopped Potato",
+core.register_craftitem("cooking_fr:potato_chopped", {
+	description = S("Chopped Potato"),
 	inventory_image = "cooking_potato_chopped.png",
 })
 fs_reg("cooking_fr:potato_chopped", fs_m)
@@ -566,8 +568,8 @@ cooking.register_craft({
 	recipe = "farming:potato",
 	output = {"cooking_fr:potato_chopped"}
 })
-minetest.register_craftitem("cooking_fr:potato_boiled_uncooked", {
-	description = "Chopped Potato",
+core.register_craftitem("cooking_fr:potato_boiled_uncooked", {
+	description = S("Chopped Potato"),
 	inventory_image = "cooking_potato_chopped.png",
 	param2 = 94,
 	_soup_container = "cooking_fr:colander",
@@ -576,16 +578,16 @@ minetest.register_craftitem("cooking_fr:potato_boiled_uncooked", {
 })
 fs_reg("cooking_fr:potato_boiled_uncooked", fs_m)
 
-minetest.register_craftitem("cooking_fr:potato_fries_uncooked", {
-	description = "Uncooked Oven Fries",
+core.register_craftitem("cooking_fr:potato_fries_uncooked", {
+	description = S("Uncooked Oven Fries"),
 	inventory_image = "cooking_potato_fries_uncooked.png",
 })
 fs_reg("cooking_fr:potato_fries_uncooked", fs_m)
 
-minetest.register_craftitem("cooking_fr:potato_fries", {
-	description = "Oven Fries",
+core.register_craftitem("cooking_fr:potato_fries", {
+	description = S("Oven Fries"),
 	inventory_image = "cooking_potato_fries.png",
-	on_use = minetest.item_eat(10)
+	on_use = core.item_eat(10)
 })
 fs_reg("cooking_fr:potato_fries", fs_f)
 
@@ -595,8 +597,8 @@ cooking.register_craft({
 	recipe = {"cooking_fr:potato_chopped", "cooking_fr:potato_chopped", "cooking_fr:potato_chopped", "cooking_fr:potato_chopped"},
 	output = "cooking_fr:potato_boiled_uncooked"
 })
-minetest.register_craftitem("cooking_fr:potato_boiled", {
-	description = "Boiled Potato",
+core.register_craftitem("cooking_fr:potato_boiled", {
+	description = S("Boiled Potato"),
 	inventory_image = "cooking_potato_boiled.png",
 	param2 = 96,
 })
@@ -608,10 +610,10 @@ cooking.register_craft({
 	recipe = "cooking_fr:potato_boiled_uncooked",
 	output = "cooking_fr:potato_boiled"
 })
-minetest.register_craftitem("cooking_fr:potato_mashed", {
-	description = "Mashed Potato",
+core.register_craftitem("cooking_fr:potato_mashed", {
+	description = S("Mashed Potato"),
 	inventory_image = "cooking_potato_mashed.png",
-	on_use = minetest.item_eat(6, "cooking:bowl")
+	on_use = core.item_eat(6, "cooking:bowl")
 })
 fs_reg("cooking_fr:potato_mashed", fs_m)
 
@@ -636,24 +638,24 @@ cooking.register_craft({
 
 --baked meats and sandwiches
 
-minetest.register_craftitem("cooking_fr:fish_baked", {
-	description = "Baked Fish",
+core.register_craftitem("cooking_fr:fish_baked", {
+	description = S("Baked Fish"),
 	inventory_image = "fishing_fish_cooked.png",
-	on_use = minetest.item_eat(4)
+	on_use = core.item_eat(4)
 })
 fs_reg("cooking_fr:fish_baked", fs_m)
 
-minetest.register_craftitem("cooking_fr:meat_baked", {
-	description = "Baked Meat",
+core.register_craftitem("cooking_fr:meat_baked", {
+	description = S("Baked Meat"),
 	inventory_image = "mobs_meat.png",
-	on_use = minetest.item_eat(4)
+	on_use = core.item_eat(4)
 })
 fs_reg("cooking_fr:meat_baked", fs_m)
 
-minetest.register_craftitem("cooking_fr:chicken_baked", {
-	description = "Baked Chicken",
+core.register_craftitem("cooking_fr:chicken_baked", {
+	description = S("Baked Chicken"),
 	inventory_image = "mobs_chicken_cooked.png",
-	on_use = minetest.item_eat(4)
+	on_use = core.item_eat(4)
 })
 fs_reg("cooking_fr:chicken_baked", fs_m)
 
@@ -676,17 +678,17 @@ cooking.register_craft({
 	output = "cooking_fr:chicken_baked"
 })
 
-season_salt_butter_garlic("fishing:fish_raw", "cooking_fr:fish_raw", -2, "Raw Fish", "fishing_fish_raw.png", nil, nil, fs_m)
-season_salt_butter_garlic("mobs:meat_raw", "cooking_fr:meat_raw", -2, "Raw Meat", "mobs_meat_raw.png", nil, nil, fs_m)
-season_salt_butter_garlic("mobs:chicken_raw", "cooking_fr:chicken_raw", -2, "Raw Chicken", "mobs_chicken_raw.png", nil, nil, fs_m)
+season_salt_butter_garlic("fishing:fish_raw", "cooking_fr:fish_raw", -2, S("Raw Fish"), "fishing_fish_raw.png", nil, nil, fs_m)
+season_salt_butter_garlic("mobs:meat_raw", "cooking_fr:meat_raw", -2, S("Raw Meat"), "mobs_meat_raw.png", nil, nil, fs_m)
+season_salt_butter_garlic("mobs:chicken_raw", "cooking_fr:chicken_raw", -2, S("Raw Chicken"), "mobs_chicken_raw.png", nil, nil, fs_m)
 
-season_salt_butter_garlic("cooking_fr:fish_baked", nil, 4, "Baked Fish", "fishing_fish_cooked.png", nil, true, fs_m)
-season_salt_butter_garlic("cooking_fr:meat_baked", nil, 4, "Baked Meat", "mobs_meat.png", nil, true, fs_m)
-season_salt_butter_garlic("cooking_fr:chicken_baked", nil, 4, "Baked Chicken", "mobs_chicken_cooked.png", nil, true, fs_m)
+season_salt_butter_garlic("cooking_fr:fish_baked", nil, 4, S("Baked Fish"), "fishing_fish_cooked.png", nil, true, fs_m)
+season_salt_butter_garlic("cooking_fr:meat_baked", nil, 4, S("Baked Meat"), "mobs_meat.png", nil, true, fs_m)
+season_salt_butter_garlic("cooking_fr:chicken_baked", nil, 4, S("Baked Chicken"), "mobs_chicken_cooked.png", nil, true, fs_m)
 
-season_salt_butter_garlic("cooking_fr:fish_sandwich", nil, 7, "Fish Sandwich", "cooking_fish_sandwich.png", nil, true, fs_m)
-season_salt_butter_garlic("cooking_fr:meat_sandwich", nil, 7, "Meat Sandwich", "cooking_meat_sandwich.png", nil, true, fs_m)
-season_salt_butter_garlic("cooking_fr:chicken_sandwich", nil, 7, "Chicken Sandwich", "cooking_chicken_sandwich.png", nil, true, fs_m)
+season_salt_butter_garlic("cooking_fr:fish_sandwich", nil, 7, S("Fish Sandwich"), "cooking_fish_sandwich.png", nil, true, fs_m)
+season_salt_butter_garlic("cooking_fr:meat_sandwich", nil, 7, S("Meat Sandwich"), "cooking_meat_sandwich.png", nil, true, fs_m)
+season_salt_butter_garlic("cooking_fr:chicken_sandwich", nil, 7, S("Chicken Sandwich"), "cooking_chicken_sandwich.png", nil, true, fs_m)
 
 for i, itemname in pairs({"cooking_fr:fish", "cooking_fr:meat", "cooking_fr:chicken"}) do
 	for i = 1, 3 do
@@ -706,55 +708,55 @@ end
 
 --eggs
 
-minetest.register_craftitem("cooking_fr:egg_fried", {
-	description = "Fried Egg",
+core.register_craftitem("cooking_fr:egg_fried", {
+	description = S("Fried Egg"),
 	inventory_image = "mobs_chicken_egg_fried.png",
-	on_use = minetest.item_eat(3)
+	on_use = core.item_eat(3)
 })
 fs_reg("cooking_fr:egg_fried", fs_f)
 
-minetest.register_craftitem("cooking_fr:egg_fried_salted", {
-	description = "Salted Fried Egg",
+core.register_craftitem("cooking_fr:egg_fried_salted", {
+	description = S("Salted Fried Egg"),
 	inventory_image = "mobs_chicken_egg_fried.png",
-	on_use = minetest.item_eat(4)
+	on_use = core.item_eat(4)
 })
 fs_reg("cooking_fr:egg_fried_salted", fs_f)
 
-minetest.register_craftitem("cooking_fr:egg_scrambled_uncooked", {
-	description = "Uncooked Scrambled Egg",
+core.register_craftitem("cooking_fr:egg_scrambled_uncooked", {
+	description = S("Uncooked Scrambled Egg"),
 	inventory_image = "cooking_egg_scrambled_uncooked.png",
 })
 fs_reg("cooking_fr:egg_scrambled_uncooked", fs_f)
 
-minetest.register_craftitem("cooking_fr:egg_scrambled", {
-	description = "Scrambled Egg",
+core.register_craftitem("cooking_fr:egg_scrambled", {
+	description = S("Scrambled Egg"),
 	inventory_image = "cooking_egg_scrambled.png",
-	on_use = minetest.item_eat(8)
+	on_use = core.item_eat(8)
 })
 fs_reg("cooking_fr:egg_scrambled", fs_f)
 
-minetest.register_craftitem("cooking_fr:egg_scrambled_aromatics_uncooked", {
-	description = "Uncooked Scrambled Egg Aromatics",
+core.register_craftitem("cooking_fr:egg_scrambled_aromatics_uncooked", {
+	description = S("Uncooked Scrambled Egg Aromatics"),
 	inventory_image = "cooking_egg_scrambled_aromatics_uncooked.png",
 })
 fs_reg("cooking_fr:egg_scrambled_aromatics_uncooked", fs_f)
 
-minetest.register_craftitem("cooking_fr:egg_scrambled_aromatics", {
-	description = "Scrambled Egg Aromatics",
+core.register_craftitem("cooking_fr:egg_scrambled_aromatics", {
+	description = S("Scrambled Egg Aromatics"),
 	inventory_image = "cooking_egg_scrambled_aromatics.png",
 })
 fs_reg("cooking_fr:egg_scrambled_aromatics", fs_f)
 
-minetest.register_craftitem("cooking_fr:egg_scrambled_tasty_uncooked", {
-	description = "Uncooked Tasty Scrambled Egg",
+core.register_craftitem("cooking_fr:egg_scrambled_tasty_uncooked", {
+	description = S("Uncooked Tasty Scrambled Egg"),
 	inventory_image = "cooking_egg_scrambled_tasty_uncooked.png",
 })
 fs_reg("cooking_fr:egg_scrambled_tasty_uncooked", fs_f)
 
-minetest.register_craftitem("cooking_fr:egg_scrambled_tasty", {
-	description = "Tasty Scrambled Egg",
+core.register_craftitem("cooking_fr:egg_scrambled_tasty", {
+	description = S("Tasty Scrambled Egg"),
 	inventory_image = "cooking_egg_scrambled_tasty.png",
-	on_use = minetest.item_eat(12)
+	on_use = core.item_eat(12)
 })
 fs_reg("cooking_fr:egg_scrambled_tasty", fs_f)
 
@@ -805,17 +807,17 @@ cooking.register_craft({
 
 --garlic bread
 
-minetest.register_craftitem("cooking_fr:garlic_bread_uncooked", {
-	description = "Uncooked Garlic Bread",
+core.register_craftitem("cooking_fr:garlic_bread_uncooked", {
+	description = S("Uncooked Garlic Bread"),
 	inventory_image = "cooking_garlic_bread_uncooked.png",
-	on_use = minetest.item_eat(4)
+	on_use = core.item_eat(4)
 })
 fs_reg("cooking_fr:garlic_bread_uncooked", fs_m)
 
-minetest.register_craftitem("cooking_fr:garlic_bread", {
-	description = "Garlic Bread",
+core.register_craftitem("cooking_fr:garlic_bread", {
+	description = S("Garlic Bread"),
 	inventory_image = "cooking_garlic_bread.png",
-	on_use = minetest.item_eat(6)
+	on_use = core.item_eat(6)
 })
 fs_reg("cooking_fr:garlic_bread", fs_m)
 cooking.register_craft({
@@ -832,21 +834,21 @@ cooking.register_craft({
 
 --coffee:
 local coffeecup = "vessels:drinking_glass"
-if not minetest.get_modpath("vessels") then
-	minetest.register_craftitem("cooking_fr:coffee_cup", {
-		description = "Coffee Cup",
+if not core.get_modpath("vessels") then
+	core.register_craftitem("cooking_fr:coffee_cup", {
+		description = S("Coffee Cup"),
 		inventory_image = "farming_coffee_cup.png",
 	})
 	coffeecup = "cooking_fr:coffee_cup"
 end
-minetest.register_craftitem("cooking_fr:coffee_ground", {
-    description = "Ground Coffee Beans",
+core.register_craftitem("cooking_fr:coffee_ground", {
+    description = S("Ground Coffee Beans"),
     inventory_image = "cooking_coffee_ground.png",
 })
 fs_reg("cooking_fr:coffee_ground", fs_s)
 
-minetest.register_craftitem("cooking_fr:coffee_uncooked", {
-    description = "Cup of Uncooked Coffee",
+core.register_craftitem("cooking_fr:coffee_uncooked", {
+    description = S("Cup of Uncooked Coffee"),
 	_soup_container = coffeecup,
 	_soup_item = coffeecup,
     inventory_image = "farming_coffee_cup.png",
@@ -854,20 +856,20 @@ minetest.register_craftitem("cooking_fr:coffee_uncooked", {
 })
 fs_reg("cooking_fr:coffee_uncooked", fs_f)
 
-minetest.register_craftitem("cooking_fr:coffee", {
-    description = "Cup of Coffee",
+core.register_craftitem("cooking_fr:coffee", {
+    description = S("Cup of Coffee"),
 	_soup_container = coffeecup,
 	param2 = 211,
     inventory_image = "farming_coffee_cup.png",
-	on_use = minetest.item_eat(4, coffeecup)
+	on_use = core.item_eat(4, coffeecup)
 })
 fs_reg("cooking_fr:coffee", fs_f)
 
-minetest.register_craftitem("cooking_fr:coffee_filter", {
-    description = "Coffee Filter",
+core.register_craftitem("cooking_fr:coffee_filter", {
+    description = S("Coffee Filter"),
     inventory_image = "cooking_coffee_filter.png",
 })
-minetest.register_craft({
+core.register_craft({
 	recipe = {
 		{"default:paper", "", "default:paper"},
 		{"", "default:paper", ""}
@@ -894,42 +896,42 @@ cooking.register_craft({
 
 --Pies
 
-minetest.register_craftitem("cooking_fr:rhubarb_pie_uncooked", {
-    description = "Uncooked Rhubarb Pie",
+core.register_craftitem("cooking_fr:rhubarb_pie_uncooked", {
+    description = S("Uncooked Rhubarb Pie"),
     inventory_image = "farming_rhubarb_pie.png",
 })
 fs_reg("cooking_fr:rhubarb_pie_uncooked", fs_m)
 
-minetest.register_craftitem("cooking_fr:rhubarb_pie", {
-    description = "Rhubarb Pie",
+core.register_craftitem("cooking_fr:rhubarb_pie", {
+    description = S("Rhubarb Pie"),
     inventory_image = "farming_rhubarb_pie.png",
-	on_use = minetest.item_eat(10)
+	on_use = core.item_eat(10)
 })
 fs_reg("cooking_fr:rhubarb_pie", fs_m)
 
-minetest.register_craftitem("cooking_fr:strawberry_pie_uncooked", {
-    description = "Uncooked Strawberry Pie",
+core.register_craftitem("cooking_fr:strawberry_pie_uncooked", {
+    description = S("Uncooked Strawberry Pie"),
     inventory_image = "cooking_strawberry_pie_uncooked.png",
 })
 fs_reg("cooking_fr:strawberry_pie_uncooked", fs_m)
 
-minetest.register_craftitem("cooking_fr:strawberry_pie", {
-    description = "Strawberry Pie",
+core.register_craftitem("cooking_fr:strawberry_pie", {
+    description = S("Strawberry Pie"),
     inventory_image = "cooking_strawberry_pie.png",
-	on_use = minetest.item_eat(10)
+	on_use = core.item_eat(10)
 })
 fs_reg("cooking_fr:strawberry_pie", fs_m)
 
-minetest.register_craftitem("cooking_fr:pumpkin_pie_uncooked", {
-    description = "Uncooked Pumpkin Pie",
+core.register_craftitem("cooking_fr:pumpkin_pie_uncooked", {
+    description = S("Uncooked Pumpkin Pie"),
     inventory_image = "cooking_pumpkin_pie_uncooked.png",
 })
 fs_reg("cooking_fr:pumpkin_pie_uncooked", fs_m)
 
-minetest.register_craftitem("cooking_fr:pumpkin_pie", {
-    description = "Pumpkin Pie",
+core.register_craftitem("cooking_fr:pumpkin_pie", {
+    description = S("Pumpkin Pie"),
     inventory_image = "cooking_pumpkin_pie.png",
-	on_use = minetest.item_eat(10)
+	on_use = core.item_eat(10)
 })
 fs_reg("cooking_fr:pumpkin_pie", fs_m)
 fs_reg("farming:pumpkin_slice", 60)
@@ -970,63 +972,63 @@ cooking.register_craft({
 
 --Donuts
 
-minetest.register_craftitem("cooking_fr:donut_batter", {
-    description = "Donut Batter",
+core.register_craftitem("cooking_fr:donut_batter", {
+    description = S("Donut Batter"),
     inventory_image = "cooking_donut_batter.png",
 })
 fs_reg("cooking_fr:donut_batter", fs_f)
 
-minetest.register_craftitem("cooking_fr:donut", {
-    description = "Donut",
+core.register_craftitem("cooking_fr:donut", {
+    description = S("Donut"),
     inventory_image = "farming_donut.png",
-	on_use = minetest.item_eat(4)
+	on_use = core.item_eat(4)
 })
 fs_reg("cooking_fr:donut", fs_f)
 
-minetest.register_craftitem("cooking_fr:donut_blueberry", {
-    description = "Blueberry Donut",
+core.register_craftitem("cooking_fr:donut_blueberry", {
+    description = S("Blueberry Donut"),
     inventory_image = "cooking_donut_blueberry.png",
-	on_use = minetest.item_eat(6)
+	on_use = core.item_eat(6)
 })
 fs_reg("cooking_fr:donut_blueberry", fs_f)
 
-minetest.register_craftitem("cooking_fr:chocolate", {
-    description = "Chocolate",
+core.register_craftitem("cooking_fr:chocolate", {
+    description = S("Chocolate"),
     inventory_image = "farming_chocolate_dark.png",
 })
 fs_reg("cooking_fr:chocolate", fs_s)
 
-minetest.register_craftitem("cooking_fr:donut_chocolate", {
-    description = "Chocolate Donut",
+core.register_craftitem("cooking_fr:donut_chocolate", {
+    description = S("Chocolate Donut"),
     inventory_image = "farming_donut_chocolate.png",
-	on_use = minetest.item_eat(6)
+	on_use = core.item_eat(6)
 })
 fs_reg("cooking_fr:donut_chocolate", fs_f)
 
-minetest.register_craftitem("cooking_fr:donut_strawberry", {
-    description = "Strawberry Donut",
+core.register_craftitem("cooking_fr:donut_strawberry", {
+    description = S("Strawberry Donut"),
     inventory_image = "farming_donut_apple.png",
-	on_use = minetest.item_eat(6)
+	on_use = core.item_eat(6)
 })
 fs_reg("cooking_fr:donut_strawberry", fs_f)
 
-minetest.register_craftitem("cooking_fr:strawberry_jam", {
-    description = "Strawberry Jam",
+core.register_craftitem("cooking_fr:strawberry_jam", {
+    description = S("Strawberry Jam"),
     inventory_image = "cooking_strawberry_jam.png",
 })
 fs_reg("cooking_fr:strawberry_jam", fs_s)
 
-minetest.register_craftitem("cooking_fr:bread_strawberry_jam", {
-	description = "Bread with Strawberry Jam",
+core.register_craftitem("cooking_fr:bread_strawberry_jam", {
+	description = S("Bread with Strawberry Jam"),
 	inventory_image = "cooking_bread_strawberry_jam.png",
-	on_use = minetest.item_eat(5),
+	on_use = core.item_eat(5),
 })
 fs_reg("cooking_fr:bread_strawberry_jam", fs_s)
 
-minetest.register_craftitem("cooking_fr:toast_strawberry_jam", {
-	description = "Toast with Strawberry Jam",
+core.register_craftitem("cooking_fr:toast_strawberry_jam", {
+	description = S("Toast with Strawberry Jam"),
 	inventory_image = "cooking_toast_strawberry_jam.png",
-	on_use = minetest.item_eat(6),
+	on_use = core.item_eat(6),
 })
 fs_reg("cooking_fr:toast_strawberry_jam", fs_m)
 
@@ -1040,10 +1042,10 @@ cooking.register_craft({
 	recipe = {"cooking:toast", "cooking_fr:strawberry_jam"},
 	output = "cooking_fr:toast_strawberry_jam"
 })
-minetest.register_craftitem("cooking_fr:donut_sugared", {
-    description = "Sugared Donut",
+core.register_craftitem("cooking_fr:donut_sugared", {
+    description = S("Sugared Donut"),
     inventory_image = "cooking_donut_sugared.png",
-	on_use = minetest.item_eat(6)
+	on_use = core.item_eat(6)
 })
 fs_reg("cooking_fr:donut_sugared", fs_f)
 
@@ -1089,22 +1091,22 @@ cooking.register_craft({
 })
 
 --stir fry
-minetest.register_craftitem("cooking_fr:meat_chopped_uncooked", {
-    description = "Uncooked Chopped Meat",
+core.register_craftitem("cooking_fr:meat_chopped_uncooked", {
+    description = S("Uncooked Chopped Meat"),
     inventory_image = "cooking_meat_chopped_uncooked.png",
 })
 fs_reg("cooking_fr:meat_chopped_uncooked", fs_m)
 
-minetest.register_craftitem("cooking_fr:stir_fry_uncooked", {
-    description = "Uncooked Stir Fry",
+core.register_craftitem("cooking_fr:stir_fry_uncooked", {
+    description = S("Uncooked Stir Fry"),
     inventory_image = "cooking_stir_fry_uncooked.png",
 })
 fs_reg("cooking_fr:stir_fry_uncooked", fs_m)
 
-minetest.register_craftitem("cooking_fr:stir_fry", {
-    description = "Stir Fry",
+core.register_craftitem("cooking_fr:stir_fry", {
+    description = S("Stir Fry"),
     inventory_image = "cooking_stir_fry.png",
-	on_use = minetest.item_eat(15, "cooking:bowl")
+	on_use = core.item_eat(15, "cooking:bowl")
 })
 fs_reg("cooking_fr:stir_fry", fs_m)
 
@@ -1127,21 +1129,21 @@ cooking.register_craft({
 
 --pasta
 
-minetest.register_craftitem("cooking_fr:pasta_dough", {
-    description = "Pasta Dough",
+core.register_craftitem("cooking_fr:pasta_dough", {
+    description = S("Pasta Dough"),
     inventory_image = "cooking_pasta_dough.png",
 	_cookingsimple = true
 })
 fs_reg("cooking_fr:pasta_dough", fs_m)
 
-minetest.register_craftitem("cooking_fr:noodles_uncooked", {
-    description = "Uncooked Noodles",
+core.register_craftitem("cooking_fr:noodles_uncooked", {
+    description = S("Uncooked Noodles"),
     inventory_image = "cooking_noodles_uncooked.png",
 })
 fs_reg("cooking_fr:noodles_uncooked", fs_m)
 
-minetest.register_craftitem("cooking_fr:noodles_uncooked_soup", {
-    description = "Uncooked Noodles",
+core.register_craftitem("cooking_fr:noodles_uncooked_soup", {
+    description = S("Uncooked Noodles"),
 	param2 = 200,
 	_soup_container = "cooking_fr:colander",
 	_soup_item = "cooking_fr:noodles_uncooked",
@@ -1150,16 +1152,16 @@ minetest.register_craftitem("cooking_fr:noodles_uncooked_soup", {
 })
 fs_reg("cooking_fr:noodles_uncooked_soup", fs_m)
 
-minetest.register_craftitem("cooking_fr:noodles", {
-    description = "Noodles",
+core.register_craftitem("cooking_fr:noodles", {
+    description = S("Noodles"),
 	param2 = 23,
 	_soup_container = "cooking_fr:colander",
     inventory_image = "cooking_noodles.png",
 })
 fs_reg("cooking_fr:noodles", fs_m)
 
-minetest.register_craftitem("cooking_fr:lasagna_noodle_uncooked", {
-    description = "Uncooked Lasagna Noodle",
+core.register_craftitem("cooking_fr:lasagna_noodle_uncooked", {
+    description = S("Uncooked Lasagna Noodle"),
     inventory_image = "cooking_lasagna_noodle_uncooked.png",
 })
 fs_reg("cooking_fr:lasagna_noodle_uncooked", fs_m)
@@ -1191,40 +1193,40 @@ cooking.register_craft({
 	recipe = "cooking_fr:noodles_uncooked_soup",
 	output = "cooking_fr:noodles"
 })
-minetest.register_craftitem("cooking_fr:tomato_soup_uncooked", {
+core.register_craftitem("cooking_fr:tomato_soup_uncooked", {
     description = "Uncooked Tomato Soup",
     inventory_image = "cooking_tomato_soup_uncooked.png",
 	param2 = 252,
 })
 fs_reg("cooking_fr:tomato_soup_uncooked", fs_m)
 
-minetest.register_craftitem("cooking_fr:tomato_soup", {
-    description = "Tomato Soup",
+core.register_craftitem("cooking_fr:tomato_soup", {
+    description = S("Tomato Soup"),
     inventory_image = "cooking_tomato_soup.png",
 	param2 = 9,
-	on_use = minetest.item_eat(6, "cooking:bowl")
+	on_use = core.item_eat(6, "cooking:bowl")
 })
 fs_reg("cooking_fr:tomato_soup", fs_m)
 
-minetest.register_craftitem("cooking_fr:tomato_sauce", {
-    description = "Tomato Sauce",
+core.register_craftitem("cooking_fr:tomato_sauce", {
+    description = S("Tomato Sauce"),
     inventory_image = "cooking_tomato_sauce.png",
 	param2 = 3,
 })
 fs_reg("cooking_fr:tomato_sauce", fs_m)
 
-minetest.register_craftitem("cooking_fr:alfredo_sauce_uncooked", {
-    description = "Uncooked Alfredo Sauce",
+core.register_craftitem("cooking_fr:alfredo_sauce_uncooked", {
+    description = S("Uncooked Alfredo Sauce"),
     inventory_image = "cooking_alfredo_sauce_uncooked.png",
 	param2 = 216,
 })
 fs_reg("cooking_fr:alfredo_sauce_uncooked", fs_m)
 
-minetest.register_craftitem("cooking_fr:alfredo_sauce", {
-    description = "Alfredo Sauce",
+core.register_craftitem("cooking_fr:alfredo_sauce", {
+    description = S("Alfredo Sauce"),
     inventory_image = "cooking_alfredo_sauce.png",
 	param2 = 215,
-	on_use = minetest.item_eat(6, "cooking:bowl")
+	on_use = core.item_eat(6, "cooking:bowl")
 })
 fs_reg("cooking_fr:alfredo_sauce", fs_m)
 
@@ -1257,28 +1259,28 @@ cooking.register_craft({
 	output = "cooking_fr:alfredo_sauce"
 })
 
-minetest.register_craftitem("cooking_fr:breadcrumbs", {
-    description = "Breadcrumbs",
+core.register_craftitem("cooking_fr:breadcrumbs", {
+    description = S("Breadcrumbs"),
     inventory_image = "cooking_breadcrumbs.png",
 })
 fs_reg("cooking_fr:breadcrumbs", fs_s)
 
-minetest.register_craftitem("cooking_fr:meatballs_uncooked", {
-    description = "Uncooked Meatballs",
+core.register_craftitem("cooking_fr:meatballs_uncooked", {
+    description = S("Uncooked Meatballs"),
     inventory_image = "cooking_meatballs_uncooked.png",
 })
 fs_reg("cooking_fr:meatballs_uncooked", fs_f)
 
-minetest.register_craftitem("cooking_fr:meatballs", {
-    description = "Meatballs",
+core.register_craftitem("cooking_fr:meatballs", {
+    description = S("Meatballs"),
     inventory_image = "cooking_meatballs.png",
 })
 fs_reg("cooking_fr:meatballs", fs_f)
 
-minetest.register_craftitem("cooking_fr:spaghetti", {
-    description = "Spaghetti",
+core.register_craftitem("cooking_fr:spaghetti", {
+    description = S("Spaghetti"),
     inventory_image = "cooking_spaghetti.png",
-	on_use = minetest.item_eat(15, "cooking:bowl")
+	on_use = core.item_eat(15, "cooking:bowl")
 })
 fs_reg("cooking_fr:spaghetti", fs_f)
 
@@ -1304,14 +1306,14 @@ cooking.register_craft({
 	output = {"cooking_fr:spaghetti", "cooking:bowl"}
 })
 
-minetest.register_craftitem("cooking_fr:lasagna_uncooked", {
-    description = "Uncooked Lasagna",
+core.register_craftitem("cooking_fr:lasagna_uncooked", {
+    description = S("Uncooked Lasagna"),
     inventory_image = "cooking_lasagna_uncooked.png",
 })
 fs_reg("cooking_fr:lasagna_uncooked", fs_f)
 
-minetest.register_craftitem("cooking_fr:lasagna", {
-    description = "Lasagna",
+core.register_craftitem("cooking_fr:lasagna", {
+    description = S("Lasagna"),
     inventory_image = "cooking_lasagna.png",
 })
 fs_reg("cooking_fr:lasagna", fs_f)
@@ -1328,21 +1330,21 @@ cooking.register_craft({
 	output = "cooking_fr:lasagna"
 })
 
-minetest.register_craftitem("cooking_fr:chicken_alfredo", {
-    description = "Chicken Alfredo",
+core.register_craftitem("cooking_fr:chicken_alfredo", {
+    description = S("Chicken Alfredo"),
     inventory_image = "cooking_chicken_alfredo.png",
-	on_use = minetest.item_eat(15, "cooking:bowl")
+	on_use = core.item_eat(15, "cooking:bowl")
 })
 fs_reg("cooking_fr:chicken_alfredo", fs_f)
 
-minetest.register_craftitem("cooking_fr:chicken_chopped_uncooked", {
-    description = "Uncooked Chopped Chicken",
+core.register_craftitem("cooking_fr:chicken_chopped_uncooked", {
+    description = S("Uncooked Chopped Chicken"),
     inventory_image = "cooking_chicken_chopped_uncooked.png",
 })
 fs_reg("cooking_fr:chicken_chopped_uncooked", fs_m)
 
-minetest.register_craftitem("cooking_fr:chicken_chopped", {
-    description = "Chopped Chicken",
+core.register_craftitem("cooking_fr:chicken_chopped", {
+    description = S("Chopped Chicken"),
     inventory_image = "cooking_chicken_chopped.png",
 })
 fs_reg("cooking_fr:chicken_chopped", fs_m)
@@ -1366,24 +1368,24 @@ cooking.register_craft({
 
 --soups/stews
 
-minetest.register_craftitem("cooking_fr:chicken_noodle_soup_uncooked", {
-    description = "Uncooked Chicken Noodle Soup",
+core.register_craftitem("cooking_fr:chicken_noodle_soup_uncooked", {
+    description = S("Uncooked Chicken Noodle Soup"),
     inventory_image = "cooking_chicken_noodle_soup_uncooked.png",
 	param2 = 216,
-	on_use = minetest.item_eat(-2, "cooking:bowl")
+	on_use = core.item_eat(-2, "cooking:bowl")
 })
 fs_reg("cooking_fr:chicken_noodle_soup_uncooked", fs_f)
 
-minetest.register_craftitem("cooking_fr:chicken_noodle_soup", {
-    description = "Chicken Noodle Soup",
+core.register_craftitem("cooking_fr:chicken_noodle_soup", {
+    description = S("Chicken Noodle Soup"),
     inventory_image = "cooking_chicken_noodle_soup.png",
 	param2 = 215,
-	on_use = minetest.item_eat(12, "cooking:bowl")
+	on_use = core.item_eat(12, "cooking:bowl")
 })
 fs_reg("cooking_fr:chicken_noodle_soup", fs_f)
 
-minetest.register_craftitem("cooking_fr:carrot_chopped", {
-    description = "Chopped Carrot",
+core.register_craftitem("cooking_fr:carrot_chopped", {
+    description = S("Chopped Carrot"),
     inventory_image = "cooking_carrot_chopped.png",
 })
 fs_reg("cooking_fr:carrot_chopped", fs_m)
@@ -1404,19 +1406,19 @@ cooking.register_craft({
 	recipe = "cooking_fr:chicken_noodle_soup_uncooked",
 	output = "cooking_fr:chicken_noodle_soup"
 })
-minetest.register_craftitem("cooking_fr:beef_potato_stew_uncooked", {
-    description = "Uncooked Beef Potato Stew",
+core.register_craftitem("cooking_fr:beef_potato_stew_uncooked", {
+    description = S("Uncooked Beef Potato Stew"),
     inventory_image = "cooking_beef_potato_stew_uncooked.png",
 	param2 = 211,
-	on_use = minetest.item_eat(-2, "cooking:bowl")
+	on_use = core.item_eat(-2, "cooking:bowl")
 })
 fs_reg("cooking_fr:beef_potato_stew_uncooked", fs_f)
 
-minetest.register_craftitem("cooking_fr:beef_potato_stew", {
-    description = "Beef Potato Stew",
+core.register_craftitem("cooking_fr:beef_potato_stew", {
+    description = S("Beef Potato Stew"),
     inventory_image = "cooking_beef_potato_stew.png",
 	param2 = 212,
-	on_use = minetest.item_eat(12, "cooking:bowl")
+	on_use = core.item_eat(12, "cooking:bowl")
 })
 fs_reg("cooking_fr:beef_potato_stew", fs_m)
 
@@ -1431,19 +1433,19 @@ cooking.register_craft({
 	recipe = "cooking_fr:beef_potato_stew_uncooked",
 	output = "cooking_fr:beef_potato_stew"
 })
-minetest.register_craftitem("cooking_fr:cheese_fish_soup_uncooked", {
-    description = "Uncooked Cheesy Fish Soup",
+core.register_craftitem("cooking_fr:cheese_fish_soup_uncooked", {
+    description = S("Uncooked Cheesy Fish Soup"),
     inventory_image = "cooking_cheese_fish_soup_uncooked.png",
 	param2 = 224,
-	on_use = minetest.item_eat(-2, "cooking:bowl")
+	on_use = core.item_eat(-2, "cooking:bowl")
 })
 fs_reg("cooking_fr:cheese_fish_soup_uncooked", fs_f)
 
-minetest.register_craftitem("cooking_fr:cheese_fish_soup", {
-    description = "Cheesy Fish Soup",
+core.register_craftitem("cooking_fr:cheese_fish_soup", {
+    description = S("Cheesy Fish Soup"),
     inventory_image = "cooking_cheese_fish_soup.png",
 	param2 = 225,
-	on_use = minetest.item_eat(12, "cooking:bowl")
+	on_use = core.item_eat(12, "cooking:bowl")
 })
 fs_reg("cooking_fr:cheese_fish_soup", fs_f)
 
@@ -1460,34 +1462,34 @@ cooking.register_craft({
 })
 
 --beef and chicken burritos
-minetest.register_craftitem("cooking_fr:cheese_shredded", {
-    description = "Shredded Cheese",
+core.register_craftitem("cooking_fr:cheese_shredded", {
+    description = S("Shredded Cheese"),
     inventory_image = "cooking_cheese_shredded.png",
 })
 fs_reg("cooking_fr:cheese_shredded", fs_m)
 
-minetest.register_craftitem("cooking_fr:tortilla", {
-    description = "Tortilla",
+core.register_craftitem("cooking_fr:tortilla", {
+    description = S("Tortilla"),
     inventory_image = "cooking_tortilla.png",
 })
 fs_reg("cooking_fr:tortilla", fs_m)
 
-minetest.register_craftitem("cooking_fr:burrito_beef", {
-    description = "Beef Burrito",
+core.register_craftitem("cooking_fr:burrito_beef", {
+    description = S("Beef Burrito"),
     inventory_image = "cooking_burrito_beef.png",
-	on_use = minetest.item_eat(12)
+	on_use = core.item_eat(12)
 })
 fs_reg("cooking_fr:burrito_beef", fs_f)
 
-minetest.register_craftitem("cooking_fr:burrito_chicken", {
-    description = "Chicken Burrito",
+core.register_craftitem("cooking_fr:burrito_chicken", {
+    description = S("Chicken Burrito"),
     inventory_image = "cooking_burrito_chicken.png",
-    on_use = minetest.item_eat(12)
+    on_use = core.item_eat(12)
 })
 fs_reg("cooking_fr:burrito_chicken", fs_f)
 
-minetest.register_craftitem("cooking_fr:meat_chopped", {
-    description = "Chopped Meat",
+core.register_craftitem("cooking_fr:meat_chopped", {
+    description = S("Chopped Meat"),
     inventory_image = "cooking_meat_chopped.png",
 })
 fs_reg("cooking_fr:meat_chopped", fs_m)
@@ -1521,14 +1523,14 @@ cooking.register_craft({
 })
 
 --Pizza
-minetest.register_craftitem("cooking_fr:pepperoni", {
-    description = "Pepperoni",
+core.register_craftitem("cooking_fr:pepperoni", {
+    description = S("Pepperoni"),
     inventory_image = "jelys_pizzaria_meat_pepperoni_cured_inv.png",
 })
 fs_reg("cooking_fr:pepperoni", fs_s)
 
-minetest.register_craftitem("cooking_fr:pepperoni_sliced", {
-    description = "Sliced Pepperoni",
+core.register_craftitem("cooking_fr:pepperoni_sliced", {
+    description = S("Sliced Pepperoni"),
     inventory_image = "cooking_pepperoni_sliced.png",
 })
 fs_reg("cooking_fr:pepperoni_sliced", fs_s)
@@ -1543,8 +1545,8 @@ cooking.register_craft({
 	recipe = {"cooking_fr:pepperoni"},
 	output = {"cooking_fr:pepperoni_sliced 4"}
 })
-minetest.register_craftitem("cooking_fr:mushroom_chopped", {
-    description = "Chopped Mushroom",
+core.register_craftitem("cooking_fr:mushroom_chopped", {
+    description = S("Chopped Mushroom"),
     inventory_image = "cooking_mushroom_chopped.png",
 })
 cooking.register_craft({
@@ -1553,12 +1555,12 @@ cooking.register_craft({
 	output = {"cooking_fr:mushroom_chopped"}
 })
 for pizzaname, pizzadef in pairs({
-	cheese = {name = "Cheese Pizza", recipe = {"cooking:pie_crust", "cooking_fr:tomato_sauce", "cooking_fr:cheese_shredded", "cooking_fr:cheese_shredded"}},
-	hamburger = {name = "Hamburger Pizza", recipe = {"cooking:pie_crust", "cooking_fr:tomato_sauce", "cooking_fr:cheese_shredded", "cooking_fr:cheese_shredded", "cooking_fr:ground_beef_uncooked"}},
-	chicken = {name = "Chicken Pizza", recipe = {"cooking:pie_crust", "cooking_fr:alfredo_sauce_uncooked", "cooking_fr:cheese_shredded", "cooking_fr:cheese_shredded", "cooking_fr:onion_sliced", "cooking_fr:pepper_sliced", "cooking_fr:chicken_chopped_uncooked"}},
-	mushroom = {name = "Mushroom Pizza", recipe = {"cooking:pie_crust", "cooking_fr:alfredo_sauce_uncooked", "cooking_fr:cheese_shredded", "cooking_fr:cheese_shredded", "cooking_fr:onion_sliced", "cooking_fr:pepper_sliced", "cooking_fr:mushroom_chopped"}},
-	pepperoni = {name = "Pepperoni Pizza", recipe = {"cooking:pie_crust", "cooking_fr:tomato_sauce", "cooking_fr:cheese_shredded", "cooking_fr:cheese_shredded", "cooking_fr:pepperoni_sliced"}},
-	supreme = {name = "Supreme Pizza", recipe = {"cooking:pie_crust", "cooking_fr:tomato_sauce", "cooking_fr:cheese_shredded", "cooking_fr:cheese_shredded", "cooking_fr:onion_sliced", "cooking_fr:pepper_sliced", "cooking_fr:mushroom_chopped", "cooking_fr:pepperoni_sliced", "cooking_fr:ground_beef_uncooked"}},
+	cheese = {name = S("Cheese Pizza"), recipe = {"cooking:pie_crust", "cooking_fr:tomato_sauce", "cooking_fr:cheese_shredded", "cooking_fr:cheese_shredded"}},
+	hamburger = {name = S("Hamburger Pizza"), recipe = {"cooking:pie_crust", "cooking_fr:tomato_sauce", "cooking_fr:cheese_shredded", "cooking_fr:cheese_shredded", "cooking_fr:ground_beef_uncooked"}},
+	chicken = {name = S("Chicken Pizza"), recipe = {"cooking:pie_crust", "cooking_fr:alfredo_sauce_uncooked", "cooking_fr:cheese_shredded", "cooking_fr:cheese_shredded", "cooking_fr:onion_sliced", "cooking_fr:pepper_sliced", "cooking_fr:chicken_chopped_uncooked"}},
+	mushroom = {name = S("Mushroom Pizza"), recipe = {"cooking:pie_crust", "cooking_fr:alfredo_sauce_uncooked", "cooking_fr:cheese_shredded", "cooking_fr:cheese_shredded", "cooking_fr:onion_sliced", "cooking_fr:pepper_sliced", "cooking_fr:mushroom_chopped"}},
+	pepperoni = {name = S("Pepperoni Pizza"), recipe = {"cooking:pie_crust", "cooking_fr:tomato_sauce", "cooking_fr:cheese_shredded", "cooking_fr:cheese_shredded", "cooking_fr:pepperoni_sliced"}},
+	supreme = {name = S("Supreme Pizza"), recipe = {"cooking:pie_crust", "cooking_fr:tomato_sauce", "cooking_fr:cheese_shredded", "cooking_fr:cheese_shredded", "cooking_fr:onion_sliced", "cooking_fr:pepper_sliced", "cooking_fr:mushroom_chopped", "cooking_fr:pepperoni_sliced", "cooking_fr:ground_beef_uncooked"}},
 }) do
 	local tex1 = "jelys_pizzaria_pizza_dough.png"
 	local tex2 = "jelys_pizzaria_cooked_dough.png"
@@ -1609,18 +1611,18 @@ for pizzaname, pizzadef in pairs({
 			tex1 = tex1.."^"..itemtbl[item]
 			tex2 = tex2.."^"..cooked_itemtbl[item]
 		else
-			minetest.log("warning", "[cooking_fr] no texture for pizza ingredient '"..item.."'")
+			core.log("warning", "[cooking_fr] no texture for pizza ingredient '"..item.."'")
 		end
 	end
-	minetest.register_craftitem("cooking_fr:pizza_"..pizzaname.."_uncooked", {
-		description = "Uncooked "..pizzadef.name,
+	core.register_craftitem("cooking_fr:pizza_"..pizzaname.."_uncooked", {
+		description = S("Uncooked").." "..pizzadef.name,
 		inventory_image = tex1,
 	})
 	fs_reg("cooking_fr:pizza_"..pizzaname.."_uncooked", fs_f)
-	minetest.register_craftitem("cooking_fr:pizza_"..pizzaname, {
+	core.register_craftitem("cooking_fr:pizza_"..pizzaname, {
 		description = pizzadef.name,
 		inventory_image = tex2,
-		on_use = minetest.item_eat(sat)
+		on_use = core.item_eat(sat)
 	})
 	fs_reg("cooking_fr:pizza_"..pizzaname, fs_f)
 	cooking.register_craft({
@@ -1639,30 +1641,30 @@ end
 -- Majo: 
 
 --popcorn:
-minetest.register_craftitem("cooking_fr:corn_kernels", {
-    description = "Corn Kernels",
+core.register_craftitem("cooking_fr:corn_kernels", {
+    description = S("Corn Kernels"),
     inventory_image = "cooking_corn_kernels.png",
 })
 fs_reg("cooking_fr:corn_kernels", fs_s)
 
-minetest.register_craftitem("cooking_fr:unflavored_popcorn", {
-    description = "Unflavored Popcorn",
+core.register_craftitem("cooking_fr:unflavored_popcorn", {
+    description = S("Unflavored Popcorn"),
     inventory_image = "cooking_popcorn.png",
-	on_use = minetest.item_eat(3)
+	on_use = core.item_eat(3)
 })
 fs_reg("cooking_fr:unflavored_popcorn", fs_f)
 
-minetest.register_craftitem("cooking_fr:popcorn_salted", {
-    description = "Salted Popcorn",
+core.register_craftitem("cooking_fr:popcorn_salted", {
+    description = S("Salted Popcorn"),
     inventory_image = "cooking_popcorn.png",
-	on_use = minetest.item_eat(4)
+	on_use = core.item_eat(4)
 })
 fs_reg("cooking_fr:popcorn_salted", fs_f)
 
-minetest.register_craftitem("cooking_fr:popcorn_sugared", {
-    description = "Sugared Popcorn",
+core.register_craftitem("cooking_fr:popcorn_sugared", {
+    description = S("Sugared Popcorn"),
     inventory_image = "cooking_popcorn.png",
-	on_use = minetest.item_eat(4)
+	on_use = core.item_eat(4)
 })
 fs_reg("cooking_fr:popcorn_sugared", fs_f)
 
@@ -1691,9 +1693,9 @@ cooking.register_craft({
     output = {"cooking_fr:popcorn_salted"}
 })
 
-if minetest.get_modpath("cake") then
-	minetest.clear_craft({output = "cake:cake_uncooked"})
+if core.get_modpath("cake") then
+	core.clear_craft({output = "cake:cake_uncooked"})
 	--todo make cake work with cooking and foodspoil
 end
 
-dofile(minetest.get_modpath("cooking_fr").."/farming_clear_crafts.lua")
+dofile(core.get_modpath("cooking_fr").."/farming_clear_crafts.lua")
