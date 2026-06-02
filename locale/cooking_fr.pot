@@ -1,0 +1,522 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-01 20:39-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: init.lua:28 init.lua:213
+msgid "Salted"
+msgstr ""
+
+#: init.lua:34 init.lua:220
+msgid "Buttered"
+msgstr ""
+
+#: init.lua:40
+msgid "Garlic"
+msgstr ""
+
+#: init.lua:72
+msgid "Colander"
+msgstr ""
+
+#: init.lua:86
+msgid "Sliced Pepper"
+msgstr ""
+
+#: init.lua:92
+msgid "Chopped Garlic"
+msgstr ""
+
+#: init.lua:98
+msgid "Sliced Onion"
+msgstr ""
+
+#: init.lua:104
+msgid "Sliced Tomato"
+msgstr ""
+
+#: init.lua:138
+msgid "Cheese"
+msgstr ""
+
+#: init.lua:144
+msgid "Sliced Cheese"
+msgstr ""
+
+#: init.lua:168
+msgid "Garlic Powder"
+msgstr ""
+
+#: init.lua:204
+msgid "Boiled"
+msgstr ""
+
+#: init.lua:253
+msgid "Beef Stroganoff"
+msgstr ""
+
+#: init.lua:266
+msgid "Uncooked Porridge"
+msgstr ""
+
+#: init.lua:276
+msgid "Porridge"
+msgstr ""
+
+#: init.lua:285
+msgid "Sweetened Porridge"
+msgstr ""
+
+#: init.lua:317
+msgid "Uncooked Ground Beef"
+msgstr ""
+
+#: init.lua:323
+msgid "Ground Beef"
+msgstr ""
+
+#: init.lua:329
+msgid "Uncooked Hamburger Patty"
+msgstr ""
+
+#: init.lua:335
+msgid "Hamburger"
+msgstr ""
+
+#: init.lua:342
+msgid "Cheeseburger"
+msgstr ""
+
+#: init.lua:349
+msgid "Double Cheeseburger"
+msgstr ""
+
+#: init.lua:356
+msgid "Supreme Cheeseburger"
+msgstr ""
+
+#: init.lua:363
+msgid "Supreme Cheeseburger (no onion)"
+msgstr ""
+
+#: init.lua:370
+msgid "Supreme Cheeseburger (no tomato)"
+msgstr ""
+
+#: init.lua:377
+msgid "Heartstopper Burger"
+msgstr ""
+
+#: init.lua:384
+msgid "Hamburger Patty"
+msgstr ""
+
+#: init.lua:390
+msgid "Bun Top"
+msgstr ""
+
+#: init.lua:396
+msgid "Bun Bottom"
+msgstr ""
+
+#: init.lua:471
+msgid "Uncooked Rice"
+msgstr ""
+
+#: init.lua:479
+msgid "Rice"
+msgstr ""
+
+#: init.lua:503
+msgid "Uncooked Stewed Apples"
+msgstr ""
+
+#: init.lua:513
+msgid "Stewed Apples"
+msgstr ""
+
+#: init.lua:521
+msgid "Applesauce"
+msgstr ""
+
+#: init.lua:546
+msgid "Baked Potato"
+msgstr ""
+
+#: init.lua:561 init.lua:572
+msgid "Chopped Potato"
+msgstr ""
+
+#: init.lua:582
+msgid "Uncooked Oven Fries"
+msgstr ""
+
+#: init.lua:588
+msgid "Oven Fries"
+msgstr ""
+
+#: init.lua:601
+msgid "Boiled Potato"
+msgstr ""
+
+#: init.lua:614
+msgid "Mashed Potato"
+msgstr ""
+
+#: init.lua:642 init.lua:685
+msgid "Baked Fish"
+msgstr ""
+
+#: init.lua:649 init.lua:686
+msgid "Baked Meat"
+msgstr ""
+
+#: init.lua:656 init.lua:687
+msgid "Baked Chicken"
+msgstr ""
+
+#: init.lua:681
+msgid "Raw Fish"
+msgstr ""
+
+#: init.lua:682
+msgid "Raw Meat"
+msgstr ""
+
+#: init.lua:683
+msgid "Raw Chicken"
+msgstr ""
+
+#: init.lua:689
+msgid "Fish Sandwich"
+msgstr ""
+
+#: init.lua:690
+msgid "Meat Sandwich"
+msgstr ""
+
+#: init.lua:691
+msgid "Chicken Sandwich"
+msgstr ""
+
+#: init.lua:712
+msgid "Fried Egg"
+msgstr ""
+
+#: init.lua:719
+msgid "Salted Fried Egg"
+msgstr ""
+
+#: init.lua:726
+msgid "Uncooked Scrambled Egg"
+msgstr ""
+
+#: init.lua:732
+msgid "Scrambled Egg"
+msgstr ""
+
+#: init.lua:739
+msgid "Uncooked Scrambled Egg Aromatics"
+msgstr ""
+
+#: init.lua:745
+msgid "Scrambled Egg Aromatics"
+msgstr ""
+
+#: init.lua:751
+msgid "Uncooked Tasty Scrambled Egg"
+msgstr ""
+
+#: init.lua:757
+msgid "Tasty Scrambled Egg"
+msgstr ""
+
+#: init.lua:811
+msgid "Uncooked Garlic Bread"
+msgstr ""
+
+#: init.lua:818
+msgid "Garlic Bread"
+msgstr ""
+
+#: init.lua:839
+msgid "Coffee Cup"
+msgstr ""
+
+#: init.lua:845
+msgid "Ground Coffee Beans"
+msgstr ""
+
+#: init.lua:851
+msgid "Cup of Uncooked Coffee"
+msgstr ""
+
+#: init.lua:860
+msgid "Cup of Coffee"
+msgstr ""
+
+#: init.lua:869
+msgid "Coffee Filter"
+msgstr ""
+
+#: init.lua:900
+msgid "Uncooked Rhubarb Pie"
+msgstr ""
+
+#: init.lua:906
+msgid "Rhubarb Pie"
+msgstr ""
+
+#: init.lua:913
+msgid "Uncooked Strawberry Pie"
+msgstr ""
+
+#: init.lua:919
+msgid "Strawberry Pie"
+msgstr ""
+
+#: init.lua:926
+msgid "Uncooked Pumpkin Pie"
+msgstr ""
+
+#: init.lua:932
+msgid "Pumpkin Pie"
+msgstr ""
+
+#: init.lua:976
+msgid "Donut Batter"
+msgstr ""
+
+#: init.lua:982
+msgid "Donut"
+msgstr ""
+
+#: init.lua:989
+msgid "Blueberry Donut"
+msgstr ""
+
+#: init.lua:996
+msgid "Chocolate"
+msgstr ""
+
+#: init.lua:1002
+msgid "Chocolate Donut"
+msgstr ""
+
+#: init.lua:1009
+msgid "Strawberry Donut"
+msgstr ""
+
+#: init.lua:1016
+msgid "Strawberry Jam"
+msgstr ""
+
+#: init.lua:1022
+msgid "Bread with Strawberry Jam"
+msgstr ""
+
+#: init.lua:1029
+msgid "Toast with Strawberry Jam"
+msgstr ""
+
+#: init.lua:1046
+msgid "Sugared Donut"
+msgstr ""
+
+#: init.lua:1095
+msgid "Uncooked Chopped Meat"
+msgstr ""
+
+#: init.lua:1101
+msgid "Uncooked Stir Fry"
+msgstr ""
+
+#: init.lua:1107
+msgid "Stir Fry"
+msgstr ""
+
+#: init.lua:1133
+msgid "Pasta Dough"
+msgstr ""
+
+#: init.lua:1140 init.lua:1146
+msgid "Uncooked Noodles"
+msgstr ""
+
+#: init.lua:1156
+msgid "Noodles"
+msgstr ""
+
+#: init.lua:1164
+msgid "Uncooked Lasagna Noodle"
+msgstr ""
+
+#: init.lua:1204
+msgid "Tomato Soup"
+msgstr ""
+
+#: init.lua:1212
+msgid "Tomato Sauce"
+msgstr ""
+
+#: init.lua:1219
+msgid "Uncooked Alfredo Sauce"
+msgstr ""
+
+#: init.lua:1226
+msgid "Alfredo Sauce"
+msgstr ""
+
+#: init.lua:1263
+msgid "Breadcrumbs"
+msgstr ""
+
+#: init.lua:1269
+msgid "Uncooked Meatballs"
+msgstr ""
+
+#: init.lua:1275
+msgid "Meatballs"
+msgstr ""
+
+#: init.lua:1281
+msgid "Spaghetti"
+msgstr ""
+
+#: init.lua:1310
+msgid "Uncooked Lasagna"
+msgstr ""
+
+#: init.lua:1316
+msgid "Lasagna"
+msgstr ""
+
+#: init.lua:1334
+msgid "Chicken Alfredo"
+msgstr ""
+
+#: init.lua:1341
+msgid "Uncooked Chopped Chicken"
+msgstr ""
+
+#: init.lua:1347
+msgid "Chopped Chicken"
+msgstr ""
+
+#: init.lua:1372
+msgid "Uncooked Chicken Noodle Soup"
+msgstr ""
+
+#: init.lua:1380
+msgid "Chicken Noodle Soup"
+msgstr ""
+
+#: init.lua:1388
+msgid "Chopped Carrot"
+msgstr ""
+
+#: init.lua:1410
+msgid "Uncooked Beef Potato Stew"
+msgstr ""
+
+#: init.lua:1418
+msgid "Beef Potato Stew"
+msgstr ""
+
+#: init.lua:1437
+msgid "Uncooked Cheesy Fish Soup"
+msgstr ""
+
+#: init.lua:1445
+msgid "Cheesy Fish Soup"
+msgstr ""
+
+#: init.lua:1466
+msgid "Shredded Cheese"
+msgstr ""
+
+#: init.lua:1472
+msgid "Tortilla"
+msgstr ""
+
+#: init.lua:1478
+msgid "Beef Burrito"
+msgstr ""
+
+#: init.lua:1485
+msgid "Chicken Burrito"
+msgstr ""
+
+#: init.lua:1492
+msgid "Chopped Meat"
+msgstr ""
+
+#: init.lua:1527
+msgid "Pepperoni"
+msgstr ""
+
+#: init.lua:1533
+msgid "Sliced Pepperoni"
+msgstr ""
+
+#: init.lua:1549
+msgid "Chopped Mushroom"
+msgstr ""
+
+#: init.lua:1558
+msgid "Cheese Pizza"
+msgstr ""
+
+#: init.lua:1559
+msgid "Hamburger Pizza"
+msgstr ""
+
+#: init.lua:1560
+msgid "Chicken Pizza"
+msgstr ""
+
+#: init.lua:1561
+msgid "Mushroom Pizza"
+msgstr ""
+
+#: init.lua:1562
+msgid "Pepperoni Pizza"
+msgstr ""
+
+#: init.lua:1563
+msgid "Supreme Pizza"
+msgstr ""
+
+#: init.lua:1618
+msgid "Uncooked"
+msgstr ""
+
+#: init.lua:1645
+msgid "Corn Kernels"
+msgstr ""
+
+#: init.lua:1651
+msgid "Unflavored Popcorn"
+msgstr ""
+
+#: init.lua:1658
+msgid "Salted Popcorn"
+msgstr ""
+
+#: init.lua:1665
+msgid "Sugared Popcorn"
+msgstr ""
