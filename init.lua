@@ -114,6 +114,20 @@ fs_reg("cooking_fr:chocolate_chopped", fs_s)
 
 cooking.register_craft({
 	type = "cut",
+	recipe = "farming:melon_8",
+	output = {"farming:melon_slice 4"}
+})
+fs_reg("farming:melon_slice", fs_m)
+
+cooking.register_craft({
+	type = "cut",
+	recipe = "farming:pumpkin_8",
+	output = {"farming:pumpkin_slice 4"}
+})
+fs_reg("farming:pumpkin_slice", fs_m)
+
+cooking.register_craft({
+	type = "cut",
 	recipe = "farming:pepper",
 	output = {"cooking_fr:pepper_sliced 4"}
 })
